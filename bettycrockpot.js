@@ -15,7 +15,9 @@ var page = {
     page.getRecipeData();
   },
   initEvents: function() {
-
+    $(".signUpHeader").click(function(){
+    $(".signUpHeader").hide();
+});
   },
 
   // BUILD URL //
@@ -23,21 +25,21 @@ var page = {
     return page.url + page.recipeId + page.apiKey;
   },
 
-  // GET DATA AJAX CALL //
-  // getRecipeData: function() {
-  //   $.ajax({
-  //     method: 'GET',
-  //     url: page.buildUrl(),
-  //     dataType: 'json',
-  //     success: function(data) {
-  //       window.glob = data;
-  //       console.log(data);
-  //     },
-  //     error: function(err) {
-  //       alert('There was an error');
-  //     }
-  //   })
-  // },
+  GET DATA AJAX CALL //
+  getRecipeData: function() {
+    $.ajax({
+      method: 'GET',
+      url: page.buildUrl(),
+      dataType: 'json',
+      success: function(data) {
+        window.glob = data;
+        console.log(data);
+      },
+      error: function(err) {
+        alert('There was an error');
+      }
+    })
+  },
 
   // ADD DATA TO PAGE //
   // addDataToPage: function() {
