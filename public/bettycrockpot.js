@@ -25,9 +25,63 @@ var page = {
       var username = $('input[name="username"]').val();
       var password = $('input[name="password"]').val();
       console.log(username, password);
+      var login = {
+        username: username,
+        password: password
+      };
+      console.log(login);
+      return {
+        username: username,
+        password: password
+      }
     });
 
-    public/bettycrockpot.js
+    $('form.signUp').on('submit', function(event){
+      event.preventDefault();
+      console.log("Sign up Clicked!");
+      var username = $('input[name="newUsername"]').val();
+      var password = $('input[name="newPassword"]').val();
+      console.log(username, password);
+      var login = {
+        username: username,
+        password: password
+      };
+      console.log(login);
+      return {
+        username: username,
+        password: password
+      }
+    });
+
+    $('form.newRecipe').on('submit', function(event){
+      event.preventDefault();
+      console.log("New Recipe Clicked!");
+      var title = $('input[name="title"]').val();
+      var description = $('textarea[name="description"]').val();
+      var ingredients = $('textarea[name="ingredients"]').val();
+      var preparation = $('textarea[name="directions"]').val();
+      var prepTime = $('input[name="prepTime"]').val();
+      var cookTime = $('input[name="cookTime"]').val();
+      console.log(title, description, ingredients, directions, prepTime, cookTime);
+      var newRec = {
+        title: title,
+        description: description,
+        ingredients: ingredients,
+        preparation: preparation,
+        prepTime: prepTime,
+        cookTime: cookTime
+      };
+      console.log(newRec);
+      return {
+        title: title,
+        description: description,
+        ingredients: ingredients,
+        directions: directions,
+        prepTime: prepTime,
+        cookTime: cookTime
+      }
+    });
+
     $(".signUpHeader").click(function(){
       $(".signUpHeader").hide();
     });
