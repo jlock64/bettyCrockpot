@@ -3,10 +3,10 @@ $(document).ready(function(){
 })
 
 var page = {
-  url: 'http://api.bigoven.com/recipes',
-  keyWord: '?title_kw=chicken',
-  // recipeId: '05734',
-  // apiKey: '?api_key=i4mh8L358389f4Tfsq82EWZUUlO9268k',
+  url: 'http://api.bigoven.com/recipe/',
+  // keyWord: 'recipes?title_kw=chicken',
+  recipeId: '530115',
+  apiKey: '?api_key=i4mh8L358389f4Tfsq82EWZUUlO9268k',
   init: function() {
     page.initStyling();
     page.initEvents();
@@ -20,7 +20,7 @@ var page = {
 
   // BUILD URL //
   buildUrl: function() {
-    return page.url + page.keyWord;
+    return page.url + page.recipeId + page.apiKey;
   },
 
   // GET DATA AJAX CALL //
