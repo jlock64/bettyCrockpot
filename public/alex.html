@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Betty Crockpot</title>
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="site-content">
+      <header class="topNavContainer">
+          <ul class="topNav">
+            <li class="browse topNav">
+              <!-- list of recipe categories from api -->
+              <div class="browse">Browse</div>
+            </li>
+            <li class="searchBar topNav">
+              <!-- search api and search user recipes -->
+              <input type="text" name="search" placeholder="search">
+            </li>
+            <li class="favorites topNav">
+              <div class="fav">favs</div>
+            </li>
+            <li class="profile topNav">
+              <!-- photo auto links to profile
+              toggle between login btn and dropdown btn
+              Dropdown menu:
+              link to profile
+              link to shopping list
+              sign out -->
+              <div class="login">login</div>
+              <div class="dropdown"><i class="fa fa-angle-down"></i></div>
+            </li>
+          </ul>
+      </header>
+
+      <div class="bodyContent">
+
+        <section class="loading">
+          <div class="loading">
+            <span>Loading Page . . .</span>
+          </div>
+        </section>
+
+        <section class="loginPage">
+          <form class="" action="index.html" method="post">
+            <input type="text" name="username" value="username">
+            <input type="text" name="password" value="password">
+            <input type="submit" name="login" value="login">
+          </form>
+        </section>
+
+        <section class="homeGrid"> <!-- load screen -->
+          <article> <!-- template -->
+            <a href="#" class="collumnTop"><!-- links to recipe page doubles as wrapper -->
+              <img src="" alt="">
+              <h3 class="recipeTitle"></h3>
+            </a>
+            <a href="#" class="collumnMiddle"><!-- links to recipe page doubles as wrapper -->
+              <div class="recipeCard"><!-- Recipe Description --></div>
+            </a>
+            <div class="collumnBottom">
+              <a href="#" class="cardToProfile"><!-- links to profile page -->
+                <ul class="cookDetails">
+                  <li class="cookIcon"></li>
+                  <li class="credit">
+                    <h4><span>Recipe by </span><!-- username --></h4>
+                  </li>
+                  <li class="favs">
+                    <span><!-- icon --></span>
+                    <span><!-- number of fav clicks --></span>
+                  </li>
+                </ul>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <section class="profilePage">
+          <div class="navWrapper">
+            <ul class="profileNav">
+              <li><span>Recipes</span></li>
+              <li><span>Favorites</span></li>
+            </ul>
+          </div>
+          <div class="profileContent">
+            <!-- article templates? -->
+          </div>
+        </section>
+
+        <section class="recipeWorksheet">
+          <form class="" action="index.html" method="post">
+            <div class="createRecipe">
+              <ul class="createRecipeInfo">
+                <li>
+                  <label for="title">Recipe Title</label>
+                  <input class="inputWrap" name="title" type="text" data-val="true" data-val-required="Don't forget a title!">
+                </li>
+                <li>
+                  <label for="description">Description</label>
+                  <textarea class="inputWrap" name="description" data-val="true" data-val-required="Add a quick description!" rows="2" cols="20"></textarea>
+                </li>
+                <li>
+                  <label for="description">Ingredients</label>
+                  <textarea class="inputWrap" name="ingredients" placeholder="Put each ingredient on its own line." data-val="true" data-val-required="Add the ingredients!" rows="2" cols="20"></textarea>
+                </li>
+                <li>
+                  <label for="directions">Directions</label>
+                  <textarea class="inputWrap" name="directions" placeholder="Put each step on its own line." data-val="true" data-val-required="Add the directions!" rows="2" cols="20"></textarea>
+                </li>
+              </ul>
+              <div class="leftInput">
+                <ul class="addRecipeInfoStats">
+                  <li>
+                    <label for="prepTime">Prep Time</label>
+                    <input type="text" name="prepTime" value="">
+                  </li>
+                  <li>
+                    <label for="cookTime">Cook Time</label>
+                    <input type="text" name="cookTime" value="">
+                  </li>
+                </ul>
+              </div>
+              <ul>
+                <li>
+                  <input type="submit" class="recipeBtns" name="submitRecipe" value="Save">
+                </li>
+                <li>
+                  <a href="#" class="recipeBtns">Cancel</a>
+                </li>
+              </ul>
+            </div>
+          </form>
+      </section>
+    </div>
+
+    <footer>
+      <ul class="footer">
+        <li>About us</li>
+        <li>Contact us</li>
+        <li>Thanks to BigOven!</li>
+      </ul>
+      <ul class="footer">
+        <li>2016 BettyCrockpot</li>
+        <li>All Rights Reserved</li>
+      </ul>
+    </footer>
+
+  </div>
+  <script type="text/javascript" src="bower_components"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bettycrockpot.js"></script>
+  </body>
+</html>
