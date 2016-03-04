@@ -2,61 +2,80 @@ header {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100px;
-  // border: 2px solid $color1;
-  background-color: $color3;
-}
-
-ul.topNav {
-  height: 100%;
-  margin: 0 2%;
-  padding: 0;
-}
-
-li.topNav {
-  display: inline-block;
-  // border: 2px solid $color4;
-  height: 60px;
-  margin-top: 22px;
-}
-
-li.browse {
-  background-color: $color2;
-  float: left;
-}
-
-li.profile {
-  height: 40px;
-  width: 100px;
-  float: right;
-  div {
+  background-color: #D61431;
+  .headerContainer {
+    margin: 0 auto;
+    width: 100%;
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 58px;
+    position: relative;
+    top: 20px;
+    color: #fff;
+    font-family: serif;
+  }
+  h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
+  .loginHeader {
+    text-align: left;
+  }
+  .signUpHeader {
+    text-align: right;
+  }
+  .leftNav {
     display: inline-block;
+    padding: 0px 0px 10px 10px;
   }
-  div.login {
-    background-color: $color4;
-    height: 100%;
-    width: 45px;
-    float: left;
-  }
-  div.dropdown {
-    height: 100%;
+  .rightNav {
+    display: inline-block;
+    padding: 0px 10px 10px 0px;
     float: right;
-    i.fa.fa-angle-double-down {
-      font-size: 40px;
-      color: $color4;
-    }
   }
+  input[type="text"] {
+    line-height: 20px;
+    font-size: 13px;
+    border: none;
+    border-radius: 26px;
+    text-align: center;
+    color: rgba(214,20,49,1);
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  ::-webkit-input-placeholder {
+   color: rgba(214,20,49,.5);
 }
-
-input[name="search"] {
-    width: 400px;
-    height: 40px;
-    font-size: 20px;
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(214,20,49,.5);
 }
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(214,20,49,.5);
+}
+:-ms-input-placeholder {
+   color: rgba(214,20,49,.5);
+}
+  button {
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: none;
+    transition: .1s all ease-in-out;
+    color: #D61431;
+    font-weight: bold;
+    }
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 8px #fff;
+    }
 
-div.searchIcon {
-  font-size: 23px;
-  display: inline-block;
-  border: 2px solid #ef233c;
-  background-color: #8d99ae;
 }

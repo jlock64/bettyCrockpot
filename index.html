@@ -9,42 +9,34 @@
     <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
-    <div class="site-content">
-
-      <header class="topNavContainer hide">
-          <ul class="topNav">
-            <li class="browse topNav">
-              <!-- list of recipe categories from api -->
-              <div class="browse"><p class="browse">Browse</p></div>
-            </li>
-            <li class="searchBar topNav">
-              <!-- search api and search user recipes -->
-              <input type="text" name="search" placeholder="search recipes">
-              <div class="searchIcon"><i class="fa fa-search"></i></div>
-            </li>
-            <li>
-              <form class="login" action="index.html" method="post">
-                <input type="text" name="username" value="username">
-                <input type="text" name="password" value="password">
-                <input type="submit" name="login" value="login">
+    <div class="mainContainer">
+      <header>
+          <div class="headerContainer">
+            <h1>BettyCrockpot</h1>
+            <div class="leftNav">
+              <form class="login">
+                <h2 class="loginHeader">Login</h2>
+                <input type="text" value="" placeholder="username">
+                <input type="text" value="" placeholder="password">
+                <button class="loginButton">Let's Go</button>
               </form>
-            </li>
-            <li class="profile topNav">
-              <!-- photo auto links to profile
-              toggle between login btn and dropdown btn
-              Dropdown menu:
-              link to profile
-              link to shopping list
-              sign out -->
-              <div class="login"><p class="login">Login</p></div>
-              <div class="dropdown"><i class="fa fa-angle-double-down"></i></div>
-            </li>
-          </ul>
+            </div>
+            <div class="rightNav">
+              <form class="signUp">
+                <h2 class="signUpHeader">Sign Up Here</h2>
+                <div class="signUpWrapper">
+                  <input type="text" value="" placeholder="create username">
+                  <input type="text" value="" placeholder="create password">
+                  <button class="createButton">Create</button>
+                </div>
+              </form>
+            </div>
+          </div>
       </header>
 
       <div class="bodyContent">
 
-        <section class="loading hide">
+        <section class="loading">
           <div class="loading">
             <span><i class="fa fa-cog fa-spin"></i> Loading Page <i class="fa fa-cog fa-spin"></i></span>
           </div>
@@ -163,7 +155,58 @@
 
       </div>
 
+<<<<<<< HEAD
+        <section class="recipeWorksheet">
+          <form class="" action="index.html" method="post">
+            <div class="createRecipe">
+              <ul class="createRecipeInfo">
+                <li>
+                  <label for="title">Recipe Title</label>
+                  <input class="inputWrap" name="title" type="text" data-val="true" data-val-required="Don't forget a title!">
+                </li>
+                <li>
+                  <label for="description">Description</label>
+                  <textarea class="inputWrap" name="description" data-val="true" data-val-required="Add a quick description!" rows="2" cols="20"></textarea>
+                </li>
+                <li>
+                  <label for="description">Ingredients</label>
+                  <textarea class="inputWrap" name="ingredients" placeholder="Put each ingredient on its own line." data-val="true" data-val-required="Add the ingredients!" rows="2" cols="20"></textarea>
+                </li>
+                <li>
+                  <label for="directions">Directions</label>
+                  <textarea class="inputWrap" name="directions" placeholder="Put each step on its own line." data-val="true" data-val-required="Add the directions!" rows="2" cols="20"></textarea>
+                </li>
+              </ul>
+              <div class="leftInput">
+                <ul class="addRecipeInfoStats">
+                  <li>
+                    <label for="prepTime">Prep Time</label>
+                    <input type="text" name="prepTime" value="">
+                  </li>
+                  <li>
+                    <label for="cookTime">Cook Time</label>
+                    <input type="text" name="cookTime" value="">
+                  </li>
+                </ul>
+              </div>
+              <ul>
+                <li>
+                  <input type="submit" class="recipeBtns" name="submitRecipe" value="Save">
+                </li>
+                <li>
+                  <a href="#" class="recipeBtns">Cancel</a>
+                </li>
+              </ul>
+            </div>
+          </form>
+      </section>
+    </div>
+  <!-- END OF MAIN CONTAINER -->
+
+    <footer>
+=======
       <footer>
+>>>>>>> 63f089d980a43ef0b991545665a0875319874e80
       <ul class="footer">
         <li>About us</li>
         <li>Contact us</li>
@@ -175,7 +218,12 @@
       </ul>
     </footer>
 
+<<<<<<< HEAD
+  </div>
+  <!-- END OF MAIN CONTAINER -->
+=======
     </div>
+>>>>>>> 63f089d980a43ef0b991545665a0875319874e80
   <script type="text/javascript" src="bower_components"></script>
   <script type="javascript" src="bower_components/jquery/dist/jquery.js"></script>
   <script type="javascript" src="bettycrockpot.js"></script>
