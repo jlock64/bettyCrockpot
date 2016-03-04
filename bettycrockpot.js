@@ -24,20 +24,20 @@ var page = {
   },
 
   // GET DATA AJAX CALL //
-  getRecipeData: function() {
-    $.ajax({
-      method: 'GET',
-      url: page.buildUrl(),
-      dataType: 'json',
-      success: function(data) {
-        window.glob = data;
-        console.log(data);
-      },
-      error: function(err) {
-        alert('There was an error');
-      }
-    })
-  },
+  // getRecipeData: function() {
+  //   $.ajax({
+  //     method: 'GET',
+  //     url: page.buildUrl(),
+  //     dataType: 'json',
+  //     success: function(data) {
+  //       window.glob = data;
+  //       console.log(data);
+  //     },
+  //     error: function(err) {
+  //       alert('There was an error');
+  //     }
+  //   })
+  // },
 
   // ADD DATA TO PAGE //
   // addDataToPage: function() {
