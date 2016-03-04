@@ -88,8 +88,13 @@ div.profileContent {
   display: inline-block;
   margin: 0;
   padding: 0;
-  border: 2px solid #8d99ae;
   vertical-align: top; }
+  div.profileContent div.userCard {
+    height: 50px;
+    width: 100%;
+    padding: 2%; }
+    div.profileContent div.userCard h1 {
+      margin: 0; }
 
 div.recipeForm {
   width: 39.5%;
@@ -97,7 +102,6 @@ div.recipeForm {
   display: inline-block;
   margin: 0;
   padding: 0;
-  border: 2px solid #8d99ae;
   vertical-align: top; }
 
 form.newRecipe {

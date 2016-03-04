@@ -4,8 +4,16 @@ div.profileContent {
   display: inline-block;
   margin: 0;
   padding: 0;
-  border: 2px solid $color2;
+  // border: 2px solid $color2;
   vertical-align: top;
+  div.userCard {
+    height: 50px;
+    width: 100%;
+    padding: 2%;
+    h1 {
+      margin: 0;
+    }
+  }
 }
 div.recipeForm {
   width: 39.5%;
@@ -13,7 +21,7 @@ div.recipeForm {
   display: inline-block;
   margin: 0;
   padding: 0;
-  border: 2px solid $color2;
+  // border: 2px solid $color2;
   vertical-align: top;
 }
 form.newRecipe {
