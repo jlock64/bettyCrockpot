@@ -10,7 +10,8 @@
   </head>
   <body>
     <div class="site-content">
-      <header class="topNavContainer">
+
+      <header class="topNavContainer hide">
           <ul class="topNav">
             <li class="browse topNav">
               <!-- list of recipe categories from api -->
@@ -49,7 +50,7 @@
           </div>
         </section>
 
-        <section class="loginPage">
+        <section class="loginPage hide">
           <form class="createNew" action="index.html" method="post">
             <div class="loginInfoWrapper">
               <input type="text" name="username" value="username">
@@ -59,7 +60,7 @@
           </form>
         </section>
 
-        <section class="homeGrid"> <!-- load screen -->
+        <section class="homeGrid hide"> <!-- load screen -->
           <article> <!-- template -->
             <a href="#" class="collumnTop"><!-- links to recipe page doubles as wrapper -->
               <img src="" alt="">
@@ -87,63 +88,15 @@
 
         <section class="profilePage">
           <div class="navWrapper">
-            <ul class="profileNav">
-              <li><span>Recipes</span></li>
-              <li><span>Favorites</span></li>
-            </ul>
+
           </div>
           <div class="profileContent">
-            <!-- article templates? -->
+
           </div>
         </section>
+      </div>
 
-        <section class="recipeWorksheet">
-          <form class="" action="index.html" method="post">
-            <div class="createRecipe">
-              <ul class="createRecipeInfo">
-                <li>
-                  <label for="title">Recipe Title</label>
-                  <input class="inputWrap" name="title" type="text" data-val="true" data-val-required="Don't forget a title!">
-                </li>
-                <li>
-                  <label for="description">Description</label>
-                  <textarea class="inputWrap" name="description" data-val="true" data-val-required="Add a quick description!" rows="2" cols="20"></textarea>
-                </li>
-                <li>
-                  <label for="description">Ingredients</label>
-                  <textarea class="inputWrap" name="ingredients" placeholder="Put each ingredient on its own line." data-val="true" data-val-required="Add the ingredients!" rows="2" cols="20"></textarea>
-                </li>
-                <li>
-                  <label for="directions">Directions</label>
-                  <textarea class="inputWrap" name="directions" placeholder="Put each step on its own line." data-val="true" data-val-required="Add the directions!" rows="2" cols="20"></textarea>
-                </li>
-              </ul>
-              <div class="leftInput">
-                <ul class="addRecipeInfoStats">
-                  <li>
-                    <label for="prepTime">Prep Time</label>
-                    <input type="text" name="prepTime" value="">
-                  </li>
-                  <li>
-                    <label for="cookTime">Cook Time</label>
-                    <input type="text" name="cookTime" value="">
-                  </li>
-                </ul>
-              </div>
-              <ul>
-                <li>
-                  <input type="submit" class="recipeBtns" name="submitRecipe" value="Save">
-                </li>
-                <li>
-                  <a href="#" class="recipeBtns">Cancel</a>
-                </li>
-              </ul>
-            </div>
-          </form>
-      </section>
-    </div>
-
-    <footer>
+      <footer>
       <ul class="footer">
         <li>About us</li>
         <li>Contact us</li>
@@ -155,7 +108,7 @@
       </ul>
     </footer>
 
-  </div>
+    </div>
   <script type="text/javascript" src="bower_components"></script>
   <script type="javascript" src="bower_components/jquery/dist/jquery.js"></script>
   <script type="javascript" src="bettycrockpot.js"></script>
