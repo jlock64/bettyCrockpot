@@ -1,0 +1,100 @@
+div.profileContent {
+  width: 59.5%;
+  min-height: 478px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 2px solid $color2;
+  vertical-align: top;
+}
+div.recipeForm {
+  width: 39.5%;
+  min-height: 478px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  border: 2px solid $color2;
+  vertical-align: top;
+}
+form.newRecipe {
+  width: 85%;
+  margin: 0 auto;
+  ul {
+    list-style-type: none;
+    padding: 0;
+    li {
+      margin: 18px 0;
+    }
+  }
+  label {
+    display: block;
+    font-size: 20px;
+  }
+  input[type="text"] {
+    width: 100%;
+    font-size: 18px;
+  }
+  input[type="text"]:focus {
+    outline: none;
+  }
+  textarea {
+    width: 100%;
+    font-size: 18px;
+  }
+  textarea:focus {
+    outline: none;
+  }
+}
+article.recipeCard {
+  width: 90%;
+  border: 2px solid #d90429;
+  padding: 4%;
+  margin: 2% auto;
+  overflow: auto;
+  div.description {
+    max-height: 150px;
+    max-width: 42%;
+    overflow: auto;
+    padding:2%;
+    h6 {
+      margin: 0;
+    }
+  }
+  div.cardLeft {
+    display: inline-block;
+    width: 49.7%;
+    vertical-align: top;
+  }
+  div.cardRight {
+    display: inline-block;
+    width: 49.7%;
+    vertical-align: top;
+  }
+  div.ingredients {
+    max-height: 150px;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    padding:2%;
+    overflow: auto;
+  }
+  div.directions {
+    max-height: 300px;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    padding:2%;
+    overflow: auto;
+  }
+  div.times {
+    padding:2%;
+    div.prep {
+      max-height: 150px;
+      overflow: auto;
+    }
+    div.cook {
+      max-height: 150px;
+      overflow: auto;
+    }
+  }
+}
