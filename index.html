@@ -14,12 +14,19 @@
           <ul class="topNav">
             <li class="browse topNav">
               <!-- list of recipe categories from api -->
-              <div class="browse">Browse</div>
+              <div class="browse"><p class="browse">Browse</p></div>
             </li>
             <li class="searchBar topNav">
               <!-- search api and search user recipes -->
               <input type="text" name="search" placeholder="search recipes">
-              <input type="submit" name="name" value="search">
+              <div class="searchIcon"><i class="fa fa-search"></i></div>
+            </li>
+            <li>
+              <form class="" action="index.html" method="post">
+                <input type="text" name="username" value="username">
+                <input type="text" name="password" value="password">
+                <input type="submit" name="login" value="login">
+              </form>
             </li>
             <li class="profile topNav">
               <!-- photo auto links to profile
@@ -28,27 +35,25 @@
               link to profile
               link to shopping list
               sign out -->
-              <div class="login">login</div>
-            </li>
-            <li>
-              <div class="dropdown"><i class="fa fa-angle-down"></i></div>
+              <div class="login"><p class="login">Login</p></div>
+              <div class="dropdown"><i class="fa fa-angle-double-down"></i></div>
             </li>
           </ul>
       </header>
 
       <div class="bodyContent">
 
-        <section class="loading">
+        <section class="loading hide">
           <div class="loading">
-            <span>Loading Page . . .</span>
+            <span><i class="fa fa-cog fa-spin"></i> Loading Page <i class="fa fa-cog fa-spin"></i></span>
           </div>
         </section>
 
         <section class="loginPage">
           <form class="" action="index.html" method="post">
-            <input type="text" name="username" value="username">
-            <input type="text" name="password" value="password">
-            <input type="submit" name="login" value="login">
+            <input type="text" name="username" value="New Username">
+            <input type="text" name="password" value="New Password">
+            <input type="submit" name="login" value="Create New Account">
           </form>
         </section>
 
@@ -143,14 +148,14 @@
         <li>Thanks to BigOven!</li>
       </ul>
       <ul class="footer">
-        <li>2016 BettyCrockpot</li>
+        <li><i class="fa fa-copyright"></i>2016 BettyCrockpot</li>
         <li>All Rights Reserved</li>
       </ul>
     </footer>
 
   </div>
   <script type="text/javascript" src="bower_components"></script>
-  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-  <script type="text/javascript" src="bettycrockpot.js"></script>
+  <script type="javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="javascript" src="bettycrockpot.js"></script>
   </body>
 </html>
