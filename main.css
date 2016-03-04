@@ -3,14 +3,31 @@
   font-family: 'Lato', sans-serif;
   box-sizing: border-box; }
 
-header {
-  width: 100%;
-  height: 100px;
-  border: 2px solid #2b2d42; }
+body {
+  margin: 0;
+  padding: 0; }
 
 div.site-content {
   width: 100%;
-  height: 100%; }
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+div.bodyContent {
+  margin: 0;
+  padding: 0; }
+
+section {
+  width: 100%;
+  min-height: 478px;
+  border: 2px solid #d90429; }
+
+header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100px;
+  background-color: #edf2f4; }
 
 ul.topNav {
   width: 100%;
@@ -20,28 +37,15 @@ ul.topNav {
 
 li.topNav {
   display: inline-block;
-  border: 2px solid #ef233c; }
-  li.topNav div.browse {
-    height: 100%;
-    width: 50px;
-    background-color: #8d99ae; }
-  li.topNav div.fav {
-    height: 100%;
-    width: 50px;
-    background-color: #8d99ae; }
-  li.topNav div.login {
-    height: 100%;
-    width: 50px;
-    background-color: #8d99ae; }
-
-section {
-  width: 100%;
-  height: 768px;
-  border: 2px solid #d90429; }
+  border: 2px solid #ef233c;
+  height: 60px;
+  background-color: #8d99ae; }
 
 footer {
+  margin: 0;
+  padding: 0;
   width: 100%;
-  height: 300px;
+  height: 100px;
   border: 2px solid #2b2d42; }
 
 ul.footer {
