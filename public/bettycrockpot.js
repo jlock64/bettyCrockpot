@@ -73,6 +73,8 @@ var page = {
   getLoginFromDom: function(event){
     var username = $('input[name="username"]').val();
     var password = $('input[name="password"]').val();
+    $('input[name="username"]').val('');
+    $('input[name="password"]').val('');
     // console.log(username, password);
     return {
       username: username,
@@ -91,6 +93,8 @@ var page = {
   getNewUserFromDom: function(){
     var username = $('input[name="newUsername"]').val();
     var password = $('input[name="newPassword"]').val();
+    $('input[name="newUsername"]').val('');
+    $('input[name="newPassword"]').val('');
     // console.log("new user info", username, password);
     page.userName = username;
     return {
@@ -125,13 +129,18 @@ var page = {
   //get new recipe from DOM return new object
   getNewRecipeFromDom: function(){
     var title = $('input[name="title"]').val();
+    $('input[name="title"]').val('');
     var description = $('textarea[name="description"]').val();
+    $('textarea[name="description"]').val('');
     var ingredients = $('textarea[name="ingredients"]').val();
+    $('textarea[name="ingredients"]').val('');
     var preparation = $('textarea[name="directions"]').val();
+    $('textarea[name="directions"]').val('');
     var prepTime = $('input[name="prepTime"]').val();
+    $('input[name="prepTime"]').val('');
     var cookTime = $('input[name="cookTime"]').val();
+    $('input[name="cookTime"]').val('');
     // console.log(title, description, ingredients, directions, prepTime, cookTime);
-    // var newRecipe =
     return {
       title: title,
       description: description,
@@ -140,8 +149,6 @@ var page = {
       prepTime: prepTime,
       cookTime: cookTime
     };
-    // console.log(newRecipe);
-    // return newRecipe;
   },
 
   //ajax call to push new recipe object
