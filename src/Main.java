@@ -64,9 +64,11 @@ public class Main {
         }
         return null; //this is for safety, incase the requested recipe does not exist
     }
+    // using below method to obtain every recipe, regardless of user
     public static ArrayList<Recipe> selectRecipes (Connection conn) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe INNER JOIN user ON recipe_join_id = user_id");
         ResultSet results = stmt.executeQuery();
+        ArrayList recipeList = new ArrayList();
         while (results.next()) {
             int recipeId = results.getInt("recipe_id");
             int recipeJoinId = results.getInt("recipe_join_id");
@@ -77,8 +79,49 @@ public class Main {
             String prepTime = results.getString("prep_time");
             String cookTime = results.getString("cook_time");
             Recipe recipe = new Recipe (recipeId, recipeJoinId, recipeName, description, ingredient, preparation, prepTime, cookTime);
+            recipeList.add(recipe);
         }
+        return recipeList;
     }
+    //using below method to obtain a certain users recipes (perhaps to display on their home pages)
+    public static ArrayList<Recipe> selectRecipesByUser (Connection conn, int userId) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe INNER JOIN user ON recipe_join_id = user_id WHERE user_id = ?");
+        ResultSet results = stmt.executeQuery();
+        stmt.setInt(1, userId);
+        ArrayList recipeList = new ArrayList();
+        while (results.next()) {
+            int recipeId = results.getInt("recipe_id");
+            int recipeJoinId = results.getInt("recipe_join_id");
+            String recipeName = results.getString("recipe_name");
+            String description = results.getString("description");
+            String ingredient = results.getString("ingredients");
+            String preparation = results.getString("preparation");
+            String prepTime = results.getString("prep_time");
+            String cookTime = results.getString("cook_time");
+            Recipe recipe = new Recipe (recipeId, recipeJoinId, recipeName, description, ingredient, preparation, prepTime, cookTime);
+            recipeList.add(recipe);
+        }
+        return recipeList;
+    }
+    // using below method to change values of a specific recipe in the dbase recipe table
+    public static void updateRecipe (Connection conn, String recipeName, String description, String ingredients, String preparation, String prepTime, String cookTime, int recipeId) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("UPDATE recipe SET recipe_name = ?, description = ?, ingredients = ?, prep = ?, prep_time = ?, cook_time = ? WHERE recipe_id = ?");
+        stmt.setString(1, recipeName);
+        stmt.setString(2, description);
+        stmt.setString(3, ingredients);
+        stmt.setString(4, preparation);
+        stmt.setString(5, prepTime);
+        stmt.setString(6, cookTime);
+        stmt.setInt(7, recipeId);
+        stmt.execute();
+    }
+    // using below method to delete a recipe from the dbase recipe table. duh
+    public static void deleteRecipe (Connection conn, int recipeId) throws SQLException {
+        PreparedStatement stmt = conn.prepareStatement("DELETE FROM recipe WHERE recipe_id = ?");
+        stmt.setInt(1, recipeId);
+        stmt.execute();
+    }
+
 
     public static void main(String[] args) {
 
