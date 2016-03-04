@@ -9,14 +9,13 @@ public class Main {
     // this method creates our dbase tables "user" and "recipe"
     public static void createTables (Connection conn) throws SQLException {
         Statement stmt = conn.createStatement();
-        stmt.execute("CREATE TABLE IF NOT EXISTS user (user_Id IDENTITY, user_name VARCHAR, password VARCHAR)");
-        stmt.execute("CREATE TABLE IF NOT EXISTS recipe (recipe_id IDENTITY, recipe_join-id INT, recipe_name VARCHAR," +
-                " description VARCHAR, ingredients VARCHAR, preparation VARCHAR, prep_time VARCHAR, cook_time VARCHAR");
+        stmt.execute("CREATE TABLE IF NOT EXISTS user (user_id IDENTITY, user_name VARCHAR, password VARCHAR)");
+        stmt.execute("CREATE TABLE IF NOT EXISTS recipe (recipe_id IDENTITY, recipe_join_id INT, recipe_name VARCHAR, description VARCHAR, ingredients VARCHAR, preparation VARCHAR, prep_time VARCHAR, cook_time VARCHAR)");
     }
     // this method is inserting values into user dbase table
     // user_id is the identity and will be assigned automatically
     public static void insertUser (Connection conn, String userName, String password) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("INSERT INTO user VALUES (NULL, ?, ?");
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO user VALUES (NULL, ?, ?)");
         stmt.setString(1, userName);
         stmt.setString(2, password);
         stmt.execute();
@@ -24,8 +23,8 @@ public class Main {
     // this method pulls ONE user from the dbase user table, returns user object
     public static User selectUser(Connection conn, int userId) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM user WHERE user_id = ?");
-        ResultSet results = stmt.executeQuery();
         stmt.setInt(1, userId);
+        ResultSet results = stmt.executeQuery();
         if (results.next()) {
             String userName = results.getString("user_name");
             String password = results.getString("password");
@@ -50,6 +49,7 @@ public class Main {
 
     public static Recipe selectRecipe (Connection conn, int recipeId) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe WHERE recipe_id = ?");
+        stmt.setInt(1, recipeId);
         ResultSet results = stmt.executeQuery();
         if (results.next()) {  // results.next() essentially checks the dbase table for a valid recipe_id value, and continues if true
             int recipeJoinId = results.getInt("recipe_join_id");
@@ -86,8 +86,8 @@ public class Main {
     //using below method to obtain a certain users recipes (perhaps to display on their home pages)
     public static ArrayList<Recipe> selectRecipesByUser (Connection conn, int userId) throws SQLException {
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe INNER JOIN user ON recipe_join_id = user_id WHERE user_id = ?");
-        ResultSet results = stmt.executeQuery();
         stmt.setInt(1, userId);
+        ResultSet results = stmt.executeQuery();
         ArrayList recipeList = new ArrayList();
         while (results.next()) {
             int recipeId = results.getInt("recipe_id");
@@ -105,7 +105,7 @@ public class Main {
     }
     // using below method to change values of a specific recipe in the dbase recipe table
     public static void updateRecipe (Connection conn, String recipeName, String description, String ingredients, String preparation, String prepTime, String cookTime, int recipeId) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("UPDATE recipe SET recipe_name = ?, description = ?, ingredients = ?, prep = ?, prep_time = ?, cook_time = ? WHERE recipe_id = ?");
+        PreparedStatement stmt = conn.prepareStatement("UPDATE recipe SET recipe_name = ?, description = ?, ingredients = ?, preparation = ?, prep_time = ?, cook_time = ? WHERE recipe_id = ?");
         stmt.setString(1, recipeName);
         stmt.setString(2, description);
         stmt.setString(3, ingredients);
