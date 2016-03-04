@@ -1,6 +1,6 @@
 $(document).ready(function(){
   page.init();
-})
+});
 
 var page = {
   url: 'http://api.bigoven.com/recipe/',
@@ -8,24 +8,28 @@ var page = {
   recipeId: '530115',
   apiKey: '?api_key=i4mh8L358389f4Tfsq82EWZUUlO9268k',
   init: function() {
+    console.log("init working");
     page.initStyling();
     page.initEvents();
   },
   initStyling: function(){
-    // page.getRecipeData();
+    console.log("styling workings");
+    page.getRecipeData();
   },
   initEvents: function() {
+    console.log("events working");
 
-    $('button.loginButton').on('click', function(event){
+    $('form.login').on('submit', function(event){
       event.preventDefault();
+      console.log("Login Clicked!");
       var username = $('input[name="username"]').val();
       var password = $('input[name="password"]').val();
-      console.log("LOGIN BTN", username, password);
+      console.log(username, password);
     });
 
     $(".signUpHeader").click(function(){
-    $(".signUpHeader").hide();
-});
+      $(".signUpHeader").hide();
+    });
 
   },
 
@@ -34,7 +38,7 @@ var page = {
     return page.url + page.recipeId + page.apiKey;
   },
 
-  GET DATA AJAX CALL //
+  // GET DATA AJAX CALL //
   getRecipeData: function() {
     $.ajax({
       method: 'GET',
@@ -47,7 +51,7 @@ var page = {
       error: function(err) {
         alert('There was an error');
       }
-    })
+    });
   },
 
   // ADD DATA TO PAGE //
