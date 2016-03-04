@@ -14,19 +14,19 @@
           <div class="headerContainer">
             <h1>BettyCrockpot</h1>
             <div class="leftNav">
-              <form class="login">
+              <form class="login" action="" method="">
                 <h2 class="loginHeader">Login</h2>
-                <input name="username" type="text" value="" placeholder="username">
-                <input name="password" type="text" value="" placeholder="password">
-                <button class="loginButton">Let's Go</button>
+                <input name="username" type="text" placeholder="username">
+                <input name="password" type="text" placeholder="password">
+                <input name="loginButton" type="submit" value="Let's Go">
               </form>
             </div>
             <div class="rightNav">
               <form class="signUp">
                 <h2 class="signUpHeader">Sign Up Here</h2>
                 <div class="signUpWrapper">
-                  <input type="text" value="" placeholder="create username">
-                  <input type="text" value="" placeholder="create password">
+                  <input name="newUsername" type="text" placeholder="create username">
+                  <input name="newPassword" type="text" placeholder="create password">
                   <button class="createButton">Create</button>
                 </div>
               </form>
@@ -42,15 +42,15 @@
           </div>
         </section>
 
-        <section class="loginPage hide">
+        <!-- <section class="loginPage hide">
           <form class="createNew" action="index.html" method="post">
             <div class="loginInfoWrapper">
-              <input type="text" name="username" value="username">
-              <input type="text" name="password" value="password">
+              <input type="text" name="newUsername" value="username">
+              <input type="text" name="newPassword" value="password">
               <input type="submit" name="login" value="login">
             </div>
           </form>
-        </section>
+        </section> -->
 
         <section class="homeGrid hide"> <!-- load screen -->
           <article> <!-- template -->
@@ -145,6 +145,9 @@
                   <label for="cookTime">Cook Time</label>
                   <input type="text" name="cookTime" value="">
                 </li>
+                <li>
+                  <input type="submit" name="submitRecipe" value="Submit">
+                </li>
               </ul>
             </form>
           </div>
@@ -219,6 +222,6 @@
 
   <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
   <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
-  <script type="javascript" src="bettycrockpot.js"></script>
+  <script type="text/javascript" src="bettycrockpot.js"></script>
   </body>
 </html>
