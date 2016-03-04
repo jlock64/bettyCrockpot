@@ -1,0 +1,87 @@
+header {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: #D61431;
+  .headerContainer {
+    margin: 0 auto;
+    width: 100%;
+  }
+  h1 {
+    margin: 0;
+    text-align: center;
+    font-size: 58px;
+    position: relative;
+    top: 20px;
+    color: #fff;
+    font-family: serif;
+  }
+  h2 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 16px;
+    padding-bottom: 5px;
+  }
+  .loginHeader {
+    text-align: left;
+  }
+  .signUpHeader {
+    text-align: right;
+  }
+  .leftNav {
+    display: inline-block;
+    padding: 0px 0px 10px 10px;
+  }
+  .rightNav {
+    display: inline-block;
+    padding: 0px 10px 10px 0px;
+    float: right;
+  }
+  // .signUpWrapper {
+  //   position: relative;
+  //   bottom: -35px;
+  //   background-color: red;
+  //   display: none;
+  // }
+  input[type="text"] {
+    line-height: 20px;
+    font-size: 13px;
+    border: none;
+    border-radius: 26px;
+    text-align: center;
+    color: rgba(214,20,49,1);
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  ::-webkit-input-placeholder {
+   color: rgba(214,20,49,.5);
+}
+:-moz-placeholder { /* Firefox 18- */
+   color: rgba(214,20,49,.5);
+}
+::-moz-placeholder {  /* Firefox 19+ */
+   color: rgba(214,20,49,.5);
+}
+:-ms-input-placeholder {
+   color: rgba(214,20,49,.5);
+}
+  button {
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 5px;
+    border-radius: 10px;
+    background-color: #fff;
+    border: none;
+    transition: .1s all ease-in-out;
+    color: #D61431;
+    font-weight: bold;
+    }
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0px 0px 8px #fff;
+    }
+
+}
