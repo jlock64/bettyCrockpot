@@ -12,10 +12,15 @@ var page = {
     page.initEvents();
   },
   initStyling: function(){
-    page.getRecipeData();
+    // page.getRecipeData();
   },
   initEvents: function() {
-
+    $('button.loginButton').on('click', function(event){
+      event.preventDefault();
+      var username = $('input[name="username"]').val();
+      var password = $('input[name="password"]').val();
+      console.log("LOGIN BTN", username, password);
+    });
   },
 
   // BUILD URL //
