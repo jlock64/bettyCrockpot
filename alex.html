@@ -3,33 +3,44 @@
   <head>
     <meta charset="utf-8">
     <title>Betty Crockpot</title>
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
     <div class="site-content">
-      <header>
-        <section class="topNavContainer">
+      <header class="topNavContainer">
           <ul class="topNav">
-            <li class="browse">
+            <li class="browse topNav">
               <!-- list of recipe categories from api -->
+              <div class="browse">Browse</div>
             </li>
-            <li class="searchBar">
+            <li class="searchBar topNav">
               <!-- search api and search user recipes -->
+              <input type="text" name="search" placeholder="search">
             </li>
-            <li class="favorites"></li>
-            <li class="profile">
+            <li class="favorites topNav">
+              <div class="fav">favs</div>
+            </li>
+            <li class="profile topNav">
               <!-- photo auto links to profile
               toggle between login btn and dropdown btn
               Dropdown menu:
               link to profile
               link to shopping list
               sign out -->
+              <div class="login">login</div>
             </li>
           </ul>
-        </section>
       </header>
 
       <div class="bodyContent">
+
+        <section class="loading">
+          <div class="loading">
+            <span>Loading Page . . .</span>
+          </div>
+        </section>
 
         <section class="loginPage">
           <form class="" action="index.html" method="post">
@@ -79,7 +90,7 @@
 
         <section class="recipeWorksheet">
           <form class="" action="index.html" method="post">
-            <section class="createRecipe">
+            <div class="createRecipe">
               <ul class="createRecipeInfo">
                 <li>
                   <label for="title">Recipe Title</label>
@@ -98,7 +109,7 @@
                   <textarea class="inputWrap" name="directions" placeholder="Put each step on its own line." data-val="true" data-val-required="Add the directions!" rows="2" cols="20"></textarea>
                 </li>
               </ul>
-              <section class="leftInput">
+              <div class="leftInput">
                 <ul class="addRecipeInfoStats">
                   <li>
                     <label for="prepTime">Prep Time</label>
@@ -109,7 +120,7 @@
                     <input type="text" name="cookTime" value="">
                   </li>
                 </ul>
-              </section>
+              </div>
               <ul>
                 <li>
                   <input type="submit" class="recipeBtns" name="submitRecipe" value="Save">
@@ -118,23 +129,25 @@
                   <a href="#" class="recipeBtns">Cancel</a>
                 </li>
               </ul>
-            </section>
+            </div>
           </form>
-        </section>
-      </div>
-
-      <footer>
-        <ul>
-          <li>About us</li>
-          <li>Contact us</li>
-          <li>Thanks to BigOven!</li>
-        </ul>
-        <ul>
-          <li>2016 BettyCrockpot</li>
-          <li>All Rights Reserved</li>
-        </ul>
-      </footer>
+      </section>
     </div>
+
+    <footer>
+      <ul class="footer">
+        <li>About us</li>
+        <li>Contact us</li>
+        <li>Thanks to BigOven!</li>
+      </ul>
+      <ul class="footer">
+        <li>2016 BettyCrockpot</li>
+        <li>All Rights Reserved</li>
+      </ul>
+    </footer>
+
+  </div>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="bettycrockpot.js"></script>
   </body>
 </html>
