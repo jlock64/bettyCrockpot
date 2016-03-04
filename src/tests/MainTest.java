@@ -1,8 +1,9 @@
 import org.junit.Test;
-import static org.junit.Assert.*;
 
 import java.sql.*;
 import java.util.ArrayList;
+
+import static org.junit.Assert.*;
 
 /**
  * Created by noellemachin on 3/4/16.
@@ -13,7 +14,6 @@ public class MainTest {
         Main.createTables(conn);
         return conn;
     }
-
     public void endConnection (Connection conn) throws SQLException {
         Statement stmt = conn.createStatement();
         stmt.execute("DROP TABLE user");
@@ -22,60 +22,56 @@ public class MainTest {
     }
 
     @Test
-    public void insertUser() throws SQLException {
+    public void testUserInsertAndSelect () throws SQLException {
         Connection conn = startConnection();
-        Main.insertUser(conn, "Kevin", "password");
+        Main.insertUser(conn, "test", "test");
         User user = Main.selectUser(conn, 1);
         endConnection(conn);
         assertTrue(user != null);
     }
-
     @Test
-    public void insertRecipe() throws SQLException {
+    public void testRecipeInsertAndSelect () throws SQLException {
         Connection conn = startConnection();
-        Main.insertRecipe(conn, 1, "Test", "Test", "Test", "Test", "Test", "Test");
+        Main.insertRecipe(conn, 97, "test", "test", "test", "test", "test", "test");
         Recipe recipe = Main.selectRecipe(conn, 1);
         endConnection(conn);
         assertTrue(recipe != null);
     }
-
     @Test
-    public void selectRecipes() throws SQLException {
+    public void testSelectRecipes () throws SQLException {
         Connection conn = startConnection();
-        Main.insertRecipe(conn, 1, "Test", "Test", "Test", "Test", "Test", "Test");
+        Main.insertRecipe(conn, 97, "test", "test", "test", "test", "test", "test");
         ArrayList list = Main.selectRecipes(conn);
         endConnection(conn);
         assertTrue(list != null);
     }
-
-    @Test // Not sure if this test is verifying the correct argument
-    public void selectRecipesByUser() throws SQLException {
+    @Test // minorly concerned over why this one works, considering the userId and recipeJoinId's not matching, but it works
+    public void testSelectRecipesByUser () throws SQLException {
         Connection conn = startConnection();
-        Main.insertUser(conn, "Kevin", "password");
-        Main.insertRecipe(conn, 1, "Test", "Test", "Test", "Test", "Test", "Test");
+        Main.insertRecipe(conn, 0, "test", "test", "test", "test", "test", "test");
+        Main.insertUser(conn, "test", "test");
         ArrayList list = Main.selectRecipesByUser(conn, 1);
         endConnection(conn);
         assertTrue(list != null);
     }
-
     @Test
-    public void updateRecipes() throws SQLException {
+    public void testUpdateRecipe () throws SQLException {
         Connection conn = startConnection();
-        Main.insertRecipe(conn, 1, "Test", "Test", "Test", "Test", "Test", "Test");
-        Recipe one = Main.selectRecipe(conn, 1);
-        Main.updateRecipe(conn,"New", "Test", "Test", "Test", "Test", "Test", 1);
-        Recipe two = Main.selectRecipe(conn, 1);
+        Main.insertRecipe(conn, 0, "test", "test", "test", "test", "test", "test");
+        Recipe recipe1 = Main.selectRecipe(conn, 1);
+        Main.updateRecipe(conn, "CHANGED THIS", "test", "test", "test", "test", "test", 1);
+        Recipe recipe2 = Main.selectRecipe(conn, 1);
         endConnection(conn);
-        assertTrue(one != two);
+        assertTrue(recipe1 != recipe2);
     }
-
     @Test
-    public void deleteRecipe() throws SQLException {
+    public void testDeleteRecipe () throws SQLException {
         Connection conn = startConnection();
-        Main.insertRecipe(conn, 1, "Test", "Test", "Test", "Test", "Test", "Test");
-        Recipe recipe = Main.selectRecipe(conn, 1);
+        Main.insertRecipe(conn, 0, "test", "test", "test", "test", "test", "test");
         Main.deleteRecipe(conn, 1);
+        Recipe recipe = Main.selectRecipe(conn, 1);
         endConnection(conn);
-        assertTrue(recipe != null);
+        assertTrue(recipe == null);
     }
+
 }

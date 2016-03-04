@@ -88,6 +88,7 @@ public class Main {
         PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe INNER JOIN user ON recipe_join_id = user_id WHERE user_id = ?");
         stmt.setInt(1, userId);
         ResultSet results = stmt.executeQuery();
+
         ArrayList recipeList = new ArrayList();
         while (results.next()) {
             int recipeId = results.getInt("recipe_id");

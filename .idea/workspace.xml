@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="1f095e4d-2672-4202-9d25-4404ceb33f5c" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/junit_junit_4_12.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/org_jodd_jodd_json_3_6_7.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bettyCrockpot-1.iml" afterPath="$PROJECT_DIR$/.idea/bettyCrockpot-1.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
@@ -31,20 +32,10 @@
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="107" column="130" selection-start-line="107" selection-start-column="130" selection-end-line="107" selection-end-column="130" />
+              <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -52,21 +43,11 @@
       <file leaf-file-name="MainTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/MainTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="1.2616633">
-              <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
+            <state vertical-scroll-proportion="0.48701298">
+              <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -123,7 +104,6 @@
         <option value="$PROJECT_DIR$/src/home/html.java" />
         <option value="$PROJECT_DIR$/src/Recipe.java" />
         <option value="$PROJECT_DIR$/src/User.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/tests/MainTest.java" />
       </list>
@@ -137,10 +117,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="47" />
-    <option name="y" value="23" />
-    <option name="width" value="1393" />
-    <option name="height" value="877" />
+    <option name="width" value="1280" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -149,7 +127,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="2" id="Add" />
+    <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -168,16 +146,14 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="bettyCrockpot-1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -186,7 +162,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bettyCrockpot" />
+              <option name="myItemId" value="bettyCrockpot-1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -196,7 +172,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bettyCrockpot" />
+              <option name="myItemId" value="bettyCrockpot-1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -210,18 +186,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="bettyCrockpot" />
+              <option name="myItemId" value="bettyCrockpot-1" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -233,21 +211,22 @@
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.MainTest.deleteRecipe">
-    <configuration default="false" name="MainTest.insertRecipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.MainTest.testDeleteRecipe">
+    <configuration default="false" name="MainTest.testSelectRecipes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="bettyCrockpot-1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="insertRecipe" />
+      <option name="METHOD_NAME" value="testSelectRecipes" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -261,14 +240,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MainTest.selectRecipes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MainTest.testSelectRecipesByUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="bettyCrockpot-1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="selectRecipes" />
+      <option name="METHOD_NAME" value="testSelectRecipesByUser" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -282,14 +261,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MainTest.selectRecipesByUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MainTest.testUpdateRecipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="bettyCrockpot-1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="selectRecipesByUser" />
+      <option name="METHOD_NAME" value="testUpdateRecipe" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -303,15 +282,15 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MainTest.updateRecipes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="All in bettyCrockpot-1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="bettyCrockpot-1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="updateRecipes" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="package" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -324,14 +303,14 @@
       <patterns />
       <method />
     </configuration>
-    <configuration default="false" name="MainTest.deleteRecipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration default="false" name="MainTest.testDeleteRecipe" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="bettyCrockpot-1" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="MainTest" />
-      <option name="METHOD_NAME" value="deleteRecipe" />
+      <option name="METHOD_NAME" value="testDeleteRecipe" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -602,19 +581,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest.insertRecipe" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.selectRecipes" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.selectRecipesByUser" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.updateRecipes" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.deleteRecipe" />
+      <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest.testSelectRecipes" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.testSelectRecipesByUser" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.testUpdateRecipe" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.All in bettyCrockpot-1" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.testDeleteRecipe" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest.deleteRecipe" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.MainTest.updateRecipes" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.selectRecipesByUser" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.selectRecipes" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.insertRecipe" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.MainTest.testDeleteRecipe" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.All in bettyCrockpot-1" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.MainTest.testUpdateRecipe" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.MainTest.testSelectRecipesByUser" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MainTest.testSelectRecipes" />
       </list>
     </recent_temporary>
   </component>
@@ -663,52 +642,52 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MainTest_deleteRecipe - 2016.03.04 at 18h 32m 51s.xml">
-      <configuration name="MainTest.deleteRecipe" configurationId="JUnit" />
+    <history-entry file="All_in_bettyCrockpot-1 - 2016.03.04 at 18h 26m 12s.xml">
+      <configuration name="All in bettyCrockpot-1" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_deleteRecipe - 2016.03.04 at 18h 33m 34s.xml">
-      <configuration name="MainTest.deleteRecipe" configurationId="JUnit" />
+    <history-entry file="MainTest - 2016.03.04 at 17h 44m 56s.xml">
+      <configuration name="MainTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_selectRecipesByUser - 2016.03.04 at 18h 11m 25s.xml">
-      <configuration name="MainTest.selectRecipesByUser" configurationId="JUnit" />
+    <history-entry file="MainTest_testDeleteRecipe - 2016.03.04 at 18h 34m 00s.xml">
+      <configuration name="MainTest.testDeleteRecipe" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_selectRecipesByUser - 2016.03.04 at 18h 12m 45s.xml">
-      <configuration name="MainTest.selectRecipesByUser" configurationId="JUnit" />
+    <history-entry file="MainTest_testRecipeInsertAndSelect - 2016.03.04 at 17h 57m 00s.xml">
+      <configuration name="MainTest.testRecipeInsertAndSelect" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_selectRecipesByUser - 2016.03.04 at 18h 13m 25s.xml">
-      <configuration name="MainTest.selectRecipesByUser" configurationId="JUnit" />
+    <history-entry file="MainTest_testSelectRecipes - 2016.03.04 at 18h 01m 33s.xml">
+      <configuration name="MainTest.testSelectRecipes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_updateRecipes - 2016.03.04 at 18h 24m 33s.xml">
-      <configuration name="MainTest.updateRecipes" configurationId="JUnit" />
+    <history-entry file="MainTest_testSelectRecipesByUser - 2016.03.04 at 18h 06m 57s.xml">
+      <configuration name="MainTest.testSelectRecipesByUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_updateRecipes - 2016.03.04 at 18h 24m 49s.xml">
-      <configuration name="MainTest.updateRecipes" configurationId="JUnit" />
+    <history-entry file="MainTest_testSelectRecipesByUser - 2016.03.04 at 18h 10m 11s.xml">
+      <configuration name="MainTest.testSelectRecipesByUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_updateRecipes - 2016.03.04 at 18h 25m 42s.xml">
-      <configuration name="MainTest.updateRecipes" configurationId="JUnit" />
+    <history-entry file="MainTest_testSelectRecipesByUser - 2016.03.04 at 18h 10m 58s.xml">
+      <configuration name="MainTest.testSelectRecipesByUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_updateRecipes - 2016.03.04 at 18h 26m 44s.xml">
-      <configuration name="MainTest.updateRecipes" configurationId="JUnit" />
+    <history-entry file="MainTest_testSelectRecipesByUser - 2016.03.04 at 18h 13m 22s.xml">
+      <configuration name="MainTest.testSelectRecipesByUser" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MainTest_updateRecipes - 2016.03.04 at 18h 27m 13s.xml">
-      <configuration name="MainTest.updateRecipes" configurationId="JUnit" />
+    <history-entry file="MainTest_testUpdateRecipe - 2016.03.04 at 18h 25m 11s.xml">
+      <configuration name="MainTest.testUpdateRecipe" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="47" y="23" width="1393" height="877" extended-state="6" />
-    <editor active="false" />
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3306321" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33630574" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299363" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32932693" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3273906" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32876712" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.257587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -805,6 +784,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -812,6 +792,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -953,6 +940,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -972,26 +960,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="19" selection-start-line="0" selection-start-column="19" selection-end-line="0" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="107" column="130" selection-start-line="107" selection-start-column="130" selection-end-line="107" selection-end-column="130" />
+          <caret line="127" column="0" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1000,8 +972,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2616633">
-          <caret line="78" column="35" selection-start-line="78" selection-start-column="35" selection-end-line="78" selection-end-column="35" />
+        <state vertical-scroll-proportion="0.48701298">
+          <caret line="15" column="5" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1084,7 +1056,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>junit:junit:4.12</last-edited>
+          <last-edited>org.jodd:jodd-json:3.6.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
