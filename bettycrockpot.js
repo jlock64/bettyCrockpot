@@ -23,10 +23,6 @@ var page = {
       console.log("LOGIN BTN", username, password);
     });
 
-    $(".signUpHeader").click(function(){
-    $(".signUpHeader").hide();
-});
-
   },
 
   // BUILD URL //
