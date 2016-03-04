@@ -7,7 +7,7 @@ var templates = {
   recipeCardBig: [
     '<article class="recipeCard">',
       '<div class="title">',
-        '<h2>Rockin Chicken</h2>',
+        '<h2> <%= title %> </h2>',
       '</div>',
       '<div class="description">',
         '<h6> <%= description %> </h6>',
