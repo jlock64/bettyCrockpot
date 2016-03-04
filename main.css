@@ -110,6 +110,94 @@ header {
     transform: scale(1.1);
     box-shadow: 0px 0px 8px #fff; }
 
+div.profileContent {
+  width: 59.5%;
+  min-height: 478px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top; }
+  div.profileContent div.userCard {
+    height: 50px;
+    width: 100%;
+    padding: 2%; }
+    div.profileContent div.userCard h1 {
+      margin: 0; }
+
+div.recipeForm {
+  width: 39.5%;
+  min-height: 478px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  vertical-align: top; }
+
+form.newRecipe {
+  width: 85%;
+  margin: 0 auto; }
+  form.newRecipe ul {
+    list-style-type: none;
+    padding: 0; }
+    form.newRecipe ul li {
+      margin: 18px 0; }
+  form.newRecipe label {
+    display: block;
+    font-size: 20px; }
+  form.newRecipe input[type="text"] {
+    width: 100%;
+    font-size: 18px; }
+  form.newRecipe input[type="text"]:focus {
+    outline: none; }
+  form.newRecipe textarea {
+    width: 100%;
+    font-size: 18px; }
+  form.newRecipe textarea:focus {
+    outline: none; }
+
+article.recipeCard {
+  width: 90%;
+  border: 2px solid #d90429;
+  padding: 4%;
+  margin: 2% auto;
+  overflow: auto; }
+  article.recipeCard div.description {
+    max-height: 150px;
+    max-width: 42%;
+    overflow: auto;
+    padding: 2%; }
+    article.recipeCard div.description h6 {
+      margin: 0; }
+  article.recipeCard div.cardLeft {
+    display: inline-block;
+    width: 49.7%;
+    vertical-align: top; }
+  article.recipeCard div.cardRight {
+    display: inline-block;
+    width: 49.7%;
+    vertical-align: top; }
+  article.recipeCard div.ingredients {
+    max-height: 150px;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    padding: 2%;
+    overflow: auto; }
+  article.recipeCard div.directions {
+    max-height: 300px;
+    display: inline-block;
+    width: 100%;
+    vertical-align: top;
+    padding: 2%;
+    overflow: auto; }
+  article.recipeCard div.times {
+    padding: 2%; }
+    article.recipeCard div.times div.prep {
+      max-height: 150px;
+      overflow: auto; }
+    article.recipeCard div.times div.cook {
+      max-height: 150px;
+      overflow: auto; }
+
 footer {
   margin: 0;
   padding: 0;
@@ -118,4 +206,5 @@ footer {
   border: 2px solid #2b2d42; }
 
 ul.footer {
-  display: inline-block; }
+  display: inline-block;
+  list-style-type: none; }
