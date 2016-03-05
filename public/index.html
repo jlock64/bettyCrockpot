@@ -36,7 +36,7 @@
 
       <div class="bodyContent">
 
-        <section class="loading">
+        <section class="loading hide">
           <div class="loading">
             <span><i class="fa fa-cog fa-spin"></i> Loading Page <i class="fa fa-cog fa-spin"></i></span>
           </div>
@@ -131,11 +131,11 @@
                 </li>
                 <li>
                   <label for="ingredients">Ingredients</label>
-                  <textarea name="ingredients" rows="8" cols="40" placeholder="Enter every ingredient on its own line."></textarea>
+                  <textarea name="ingredients" rows="8" cols="40" placeholder=""></textarea>
                 </li>
                 <li>
                   <label for="directions">Directions</label>
-                  <textarea name="directions" rows="8" cols="40" placeholder="Enter every step on its own line."></textarea>
+                  <textarea name="directions" rows="8" cols="40" placeholder=""></textarea>
                 </li>
                 <li>
                   <label for="prepTime">Prep Time</label>
@@ -157,51 +157,6 @@
 
 
       </div>
-
-        <section class="recipeWorksheet">
-          <form class="" action="index.html" method="post">
-            <div class="createRecipe">
-              <ul class="createRecipeInfo">
-                <li>
-                  <label for="title">Recipe Title</label>
-                  <input class="inputWrap" name="title" type="text" data-val="true" data-val-required="Don't forget a title!">
-                </li>
-                <li>
-                  <label for="description">Description</label>
-                  <textarea class="inputWrap" name="description" data-val="true" data-val-required="Add a quick description!" rows="2" cols="20"></textarea>
-                </li>
-                <li>
-                  <label for="description">Ingredients</label>
-                  <textarea class="inputWrap" name="ingredients" placeholder="Put each ingredient on its own line." data-val="true" data-val-required="Add the ingredients!" rows="2" cols="20"></textarea>
-                </li>
-                <li>
-                  <label for="directions">Directions</label>
-                  <textarea class="inputWrap" name="directions" placeholder="Put each step on its own line." data-val="true" data-val-required="Add the directions!" rows="2" cols="20"></textarea>
-                </li>
-              </ul>
-              <div class="leftInput">
-                <ul class="addRecipeInfoStats">
-                  <li>
-                    <label for="prepTime">Prep Time</label>
-                    <input type="text" name="prepTime" value="">
-                  </li>
-                  <li>
-                    <label for="cookTime">Cook Time</label>
-                    <input type="text" name="cookTime" value="">
-                  </li>
-                </ul>
-              </div>
-              <ul>
-                <li>
-                  <input type="submit" class="recipeBtns" name="submitRecipe" value="Save">
-                </li>
-                <li>
-                  <a href="#" class="recipeBtns">Cancel</a>
-                </li>
-              </ul>
-            </div>
-          </form>
-      </section>
   <!-- END OF MAIN CONTAINER -->
 
     <footer>
