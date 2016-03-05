@@ -75,7 +75,7 @@ public class Main {
 
     // using below method to obtain every recipe, regardless of user
     public static ArrayList<Recipe> selectRecipes(Connection conn) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe INNER JOIN user ON recipe_join_id = user_id");
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe");
         ResultSet results = stmt.executeQuery();
         ArrayList recipeList = new ArrayList();
         while (results.next()) {
@@ -136,8 +136,11 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException {
+        Spark.externalStaticFileLocation("public");
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         createTables(conn);
+
+        insertRecipe(conn, 2, "tacos", "sdfa", "test", "test", "test", "test");
 
         Spark.init();
         Spark.get(
@@ -209,6 +212,28 @@ public class Main {
                     String prepTime = request.queryParams("prepTime");
                     String cookTime = request.queryParams("cookTime");
                     insertRecipe(conn, userId, recipeName, description, ingredients, preparation, prepTime, cookTime);
+                    return "";
+                })
+        );
+        Spark.post(
+                "/deleteRecipe",
+                ((request, response) -> {
+                    int recipeId = Integer.valueOf(request.queryParams("recipeId"));
+                    deleteRecipe(conn, recipeId);
+                    return "";
+                })
+        );
+        Spark.post(
+                "/updateRecipe",
+                ((request, response) -> {
+                    String recipeName = request.queryParams("recipeName");
+                    String description = request.queryParams("description");
+                    String ingredients = request.queryParams("ingredients");
+                    String preparation = request.queryParams("preparation");
+                    String prepTime = request.queryParams("prepTime");
+                    String cookTime = request.queryParams("cookTime");
+                    int recipeId = Integer.valueOf(request.queryParams("recipeId"));
+                    updateRecipe(conn, recipeName, description, ingredients, preparation, prepTime, cookTime, recipeId);
                     return "";
                 })
         );

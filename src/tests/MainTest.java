@@ -25,7 +25,7 @@ public class MainTest {
     public void testUserInsertAndSelect () throws SQLException {
         Connection conn = startConnection();
         Main.insertUser(conn, "test", "test");
-        User user = Main.selectUser(conn, "brad");
+        User user = Main.selectUser(conn, "test");
         endConnection(conn);
         assertTrue(user != null);
     }
