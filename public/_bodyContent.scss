@@ -21,11 +21,13 @@ section {
     color: #fff;
     font-size: 36px;
     margin-top: 18px;
+    text-shadow: 2px 2px 20px #000;
   }
   h4 {
     margin: 0;
     padding-left: 20px;
     color: #fff;
+    text-shadow: 2px 2px 20px #000;
   }
 }
 
@@ -46,6 +48,7 @@ div.navLinksWrapper {
     text-decoration: none;
     color: #fff;
     font-size: 30px;
+    text-shadow: 2px 2px 20px #000;
   }
   .users, .addRecipes, .getRecipes{
     width: 31.6%;
@@ -56,10 +59,12 @@ div.navLinksWrapper {
     margin-top: 20px;
     display: inline-block;
   }
+  .users:hover, .addRecipes:hover, .getRecipes:hover {
+    cursor: pointer;
+    opacity: .7;
+  }
   .users {
     // background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2));
-
-
     background-image: url('../images/users.jpg');
     margin-right: 18px;
   }
