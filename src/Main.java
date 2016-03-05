@@ -143,8 +143,8 @@ public class Main {
         Spark.post(
                 "/login",
                 ((request, response)-> {
-                    String userName = request.queryParams("username");
-                    String password = request.queryParams("password");
+                    String userName = request.queryParams("username");  // ****NOT SURE ABOUT PARAMETER NAMES
+                    String password = request.queryParams("password");  // ********
                     User user = selectUser(conn, userName);
                     Session session = request.session();
                     JsonSerializer serializer = new JsonSerializer();
@@ -159,6 +159,26 @@ public class Main {
                         return "User Name and/or password not recognized.";
                     }
                     return "";
+                })
+        );
+        Spark.post(
+                "/createUser",
+                ((request, response) -> {
+                    String userName = request.queryParams("");
+                    String password = request.queryParams("");
+                    Session session = request.session();
+                    JsonSerializer serializer = new JsonSerializer();
+                    if (userName == null) {
+                        return "Invalid Username";
+                    }
+                    else if (password == null) {
+                        return "Invalid Password";
+                    }
+                    else {
+                        insertUser(conn, userName, password);
+                        session.attribute("userName", userName);
+                        return serializer.serialize(selectUser(conn, userName));
+                    }
                 })
         );
 
