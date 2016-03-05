@@ -27,10 +27,9 @@ var page = {
       console.log(username, password);
     });
 
-    public/bettycrockpot.js
-    $(".signUpHeader").click(function(){
-      $(".signUpHeader").hide();
-    });
+    // $(".signUpHeader").click(function(){
+    //   $(".signUpHeader").hide();
+    // });
   },
 
   // BUILD URL //
