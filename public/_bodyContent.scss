@@ -1,12 +1,16 @@
 div.bodyContent {
-  margin: 0;
+  margin: 0 0 18px 0;
   padding: 0;
 }
 
 section {
   width: 100%;
   min-height: 478px;
-  border: 2px solid rgba(250, 250, 250, .0);
+  // border: 2px solid rgba(250, 250, 250, .0);
+}
+
+button[name="home"] {
+  width: 50px;
 }
 
 .heroImg {
@@ -75,4 +79,9 @@ div.navLinksWrapper {
   .getRecipes {
     background-image: url('../images/getRecipe.jpeg');
   }
+}
+
+// USERS PAGE //
+section.dashboard {
+    text-align: center;
 }

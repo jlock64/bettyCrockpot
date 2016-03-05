@@ -49,9 +49,32 @@ var page = {
 
     // $('form.newRecipe').on('submit', page.submitNewRecipe);
 
-    $(".signUpHeader").click(function(){
-      $(".signUpHeader").hide();
+    // USERS PAGE LINK
+    $('div.navLinksWrapper .users').on('click', function() {
+      $('.profileContent').show();
+      $('.heroImg').hide();
+      $('.recipeForm').hide();
     });
+    // ADD RECIPES LINK
+    $('div.navLinksWrapper .addRecipes').on('click', function() {
+      $('.recipeForm').show();
+      $('.heroImg').hide();
+      $('.profileContent').hide();
+    });
+    // GET RECIPES LINK
+    $('div.navLinksWrapper .getRecipes').on('click', function() {
+      $('.recipeForm').hide();
+      $('.heroImg').hide();
+      $('.profileContent').hide();
+    });
+    // HOME BUTTON LINK
+    $('.homeButton').on('click', function() {
+      $('.heroImg').show();
+      $('.recipeForm').hide();
+      $('.profileContent').hide();
+    });
+
+
   },
 
   //kicking off the load profile stuff
