@@ -140,6 +140,22 @@ public class Main {
         createTables(conn);
 
         Spark.init();
+        Spark.get(
+                "/getRecipes",
+                ((request, response) -> {
+                    JsonSerializer serializer = new JsonSerializer();
+                    return serializer.serialize(selectRecipes(conn));
+                })
+        );
+        Spark.get(
+                "/getRecipesFromUser",
+                ((request, response) -> {
+                    User user = getUserFromSession(request.session(), conn);
+                    int userId = user.userId;
+                    JsonSerializer serializer = new JsonSerializer();
+                    return serializer.serialize(selectRecipesByUser(conn, userId));
+                })
+        );
         Spark.post(
                 "/login",
                 ((request, response)-> {
@@ -164,8 +180,8 @@ public class Main {
         Spark.post(
                 "/createUser",
                 ((request, response) -> {
-                    String userName = request.queryParams("");
-                    String password = request.queryParams("");
+                    String userName = request.queryParams("newUsername");
+                    String password = request.queryParams("newPassword");
                     Session session = request.session();
                     JsonSerializer serializer = new JsonSerializer();
                     if (userName == null) {
@@ -179,6 +195,21 @@ public class Main {
                         session.attribute("userName", userName);
                         return serializer.serialize(selectUser(conn, userName));
                     }
+                })
+        );
+        Spark.post(
+                "/addRecipe",
+                ((request, response) -> {
+                    User user = getUserFromSession(request.session(), conn);
+                    int userId = user.userId;
+                    String recipeName = request.queryParams("recipeName");
+                    String description = request.queryParams("description");
+                    String ingredients = request.queryParams("ingredients");
+                    String preparation = request.queryParams("preparation");
+                    String prepTime = request.queryParams("prepTime");
+                    String cookTime = request.queryParams("cookTime");
+                    insertRecipe(conn, userId, recipeName, description, ingredients, preparation, prepTime, cookTime);
+                    return "";
                 })
         );
 
