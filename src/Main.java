@@ -75,7 +75,7 @@ public class Main {
 
     // using below method to obtain every recipe, regardless of user
     public static ArrayList<Recipe> selectRecipes(Connection conn) throws SQLException {
-        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe INNER JOIN user ON recipe_join_id = user_id");
+        PreparedStatement stmt = conn.prepareStatement("SELECT * FROM recipe");
         ResultSet results = stmt.executeQuery();
         ArrayList recipeList = new ArrayList();
         while (results.next()) {
@@ -136,15 +136,34 @@ public class Main {
     }
 
     public static void main(String[] args) throws SQLException {
+        Spark.externalStaticFileLocation("public");
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         createTables(conn);
 
+        insertRecipe(conn, 2, "tacos", "sdfa", "test", "test", "test", "test");
+
         Spark.init();
+        Spark.get(
+                "/getRecipes",
+                ((request, response) -> {
+                    JsonSerializer serializer = new JsonSerializer();
+                    return serializer.serialize(selectRecipes(conn));
+                })
+        );
+        Spark.get(
+                "/getRecipesFromUser",
+                ((request, response) -> {
+                    User user = getUserFromSession(request.session(), conn);
+                    int userId = user.userId;
+                    JsonSerializer serializer = new JsonSerializer();
+                    return serializer.serialize(selectRecipesByUser(conn, userId));
+                })
+        );
         Spark.post(
                 "/login",
                 ((request, response)-> {
-                    String userName = request.queryParams("username");
-                    String password = request.queryParams("password");
+                    String userName = request.queryParams("username");  // ****NOT SURE ABOUT PARAMETER NAMES
+                    String password = request.queryParams("password");  // ********
                     User user = selectUser(conn, userName);
                     Session session = request.session();
                     JsonSerializer serializer = new JsonSerializer();
@@ -158,6 +177,63 @@ public class Main {
                     else if (user.password != password) {
                         return "User Name and/or password not recognized.";
                     }
+                    return "";
+                })
+        );
+        Spark.post(
+                "/createUser",
+                ((request, response) -> {
+                    String userName = request.queryParams("newUsername");
+                    String password = request.queryParams("newPassword");
+                    Session session = request.session();
+                    JsonSerializer serializer = new JsonSerializer();
+                    if (userName == null) {
+                        return "Invalid Username";
+                    }
+                    else if (password == null) {
+                        return "Invalid Password";
+                    }
+                    else {
+                        insertUser(conn, userName, password);
+                        session.attribute("userName", userName);
+                        return serializer.serialize(selectUser(conn, userName));
+                    }
+                })
+        );
+        Spark.post(
+                "/addRecipe",
+                ((request, response) -> {
+                    User user = getUserFromSession(request.session(), conn);
+                    int userId = user.userId;
+                    String recipeName = request.queryParams("recipeName");
+                    String description = request.queryParams("description");
+                    String ingredients = request.queryParams("ingredients");
+                    String preparation = request.queryParams("preparation");
+                    String prepTime = request.queryParams("prepTime");
+                    String cookTime = request.queryParams("cookTime");
+                    insertRecipe(conn, userId, recipeName, description, ingredients, preparation, prepTime, cookTime);
+                    return "";
+                })
+        );
+        Spark.post(
+                "/deleteRecipe",
+                ((request, response) -> {
+                    int recipeId = Integer.valueOf(request.queryParams("recipeId"));
+                    deleteRecipe(conn, recipeId);
+                    return "";
+                })
+        );
+        Spark.post(
+                "/updateRecipe",
+                ((request, response) -> {
+                    String recipeName = request.queryParams("recipeName");
+                    String description = request.queryParams("description");
+                    String ingredients = request.queryParams("ingredients");
+                    String preparation = request.queryParams("preparation");
+                    String prepTime = request.queryParams("prepTime");
+                    String cookTime = request.queryParams("cookTime");
+                    int recipeId = Integer.valueOf(request.queryParams("recipeId"));
+                    updateRecipe(conn, recipeName, description, ingredients, preparation, prepTime, cookTime, recipeId);
                     return "";
                 })
         );
