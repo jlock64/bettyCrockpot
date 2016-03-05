@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("public/images/128-168.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("../images/128-168.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 149%;
@@ -60,11 +60,13 @@ section {
     padding-left: 20px;
     color: #fff;
     font-size: 36px;
-    margin-top: 18px; }
+    margin-top: 18px;
+    text-shadow: 2px 2px 20px #000; }
   .heroImg h4 {
     margin: 0;
     padding-left: 20px;
-    color: #fff; }
+    color: #fff;
+    text-shadow: 2px 2px 20px #000; }
 
 div.navLinksWrapper {
   width: 100%;
@@ -80,7 +82,8 @@ div.navLinksWrapper {
   div.navLinksWrapper a {
     text-decoration: none;
     color: #fff;
-    font-size: 30px; }
+    font-size: 30px;
+    text-shadow: 2px 2px 20px #000; }
   div.navLinksWrapper .users, div.navLinksWrapper .addRecipes, div.navLinksWrapper .getRecipes {
     width: 31.6%;
     background-repeat: no-repeat;
@@ -89,6 +92,9 @@ div.navLinksWrapper {
     height: 150px;
     margin-top: 20px;
     display: inline-block; }
+  div.navLinksWrapper .users:hover, div.navLinksWrapper .addRecipes:hover, div.navLinksWrapper .getRecipes:hover {
+    cursor: pointer;
+    opacity: .7; }
   div.navLinksWrapper .users {
     background-image: url("../images/users.jpg");
     margin-right: 18px; }
@@ -102,7 +108,7 @@ header {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #D61431; }
+  background-color: #9D0714; }
   header .headerContainer {
     margin: 0 auto;
     width: 100%; }
