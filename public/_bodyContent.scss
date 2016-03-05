@@ -6,5 +6,68 @@ div.bodyContent {
 section {
   width: 100%;
   min-height: 478px;
-  border: 2px solid $color5;
+  border: 2px solid rgba(250, 250, 250, .0);
+}
+
+.heroImg {
+  background-image: url('../images/mainPhoto.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  h1 {
+    margin-bottom: 5px;
+    padding-top: 250px;
+    padding-left: 20px;
+    color: #fff;
+    font-size: 36px;
+    margin-top: 18px;
+  }
+  h4 {
+    margin: 0;
+    padding-left: 20px;
+    color: #fff;
+  }
+}
+
+div.navLinksWrapper {
+  width: 100%;
+  text-align: center;;
+  .navLinks {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+  li {
+    display: inline-block;
+    top: 50px;
+    position: relative;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+  }
+  .users, .addRecipes, .getRecipes{
+    width: 31.6%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 150px;
+    margin-top: 20px;
+    display: inline-block;
+  }
+  .users {
+    // background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2));
+
+
+    background-image: url('../images/users.jpg');
+    margin-right: 18px;
+  }
+  .addRecipes {
+    background-image: url('../images/addRecipes.jpg');
+    margin-right: 18px;
+  }
+  .getRecipes {
+    background-image: url('../images/getRecipe.jpeg');
+  }
 }
