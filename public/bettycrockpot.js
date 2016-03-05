@@ -27,6 +27,7 @@ var page = {
       page.submitLogin();
     });
 
+
     //CANNOT DO IT THIS WAY will submit when clicking into input fields?!
     // $('form.login').on('click', page.submitLogin);
 
