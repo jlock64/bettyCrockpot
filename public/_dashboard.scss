@@ -1,15 +1,29 @@
+.homeButton {
+  width: 100px;
+  height: 35px;
+  background-color: #9D0714;
+  border: none;
+  border-radius: 3px;
+  position: relative;
+  top: 18px;
+  color: #fff;
+  font-size: 16px;
+  text-shadow: 1px 1px 10px #000;
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+}
+
 div.profileContent {
-  width: 59.5%;
+  width: 100%;
   min-height: 478px;
-  display: inline-block;
-  margin: 0;
+  // display: inline-block;
+  margin: 0 auto;
   padding: 0;
-  // border: 2px solid $color2;
   vertical-align: top;
   div.userCard {
-    height: 50px;
-    width: 100%;
-    padding: 2%;
+    margin-bottom: -50px;
     h1 {
       margin: 0;
       text-align: center;
@@ -17,17 +31,32 @@ div.profileContent {
   }
 }
 div.recipeForm {
-  width: 39.5%;
+  width: 100%;
   min-height: 478px;
-  display: inline-block;
-  margin: 0;
+  // display: inline-block;
+  margin: 0 auto;
   padding: 0;
-  // border: 2px solid $color2;
   vertical-align: top;
 }
 form.newRecipe {
-  width: 85%;
-  margin: 0 auto;
+  width: 70%;
+  margin: 50px auto;
+  input[type="submit"] {
+    width: 100px;
+    height: 35px;
+    background-color: #9D0714;
+    border: none;
+    border-radius: 3px;
+    position: relative;
+    top: 18px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 1px 1px 10px #000;
+  }
+  input[type="submit"]:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
   ul {
     list-style-type: none;
     padding: 0;
@@ -56,7 +85,6 @@ form.newRecipe {
 }
 article.recipeCard {
   width: 90%;
-  border: 2px solid #d90429;
   padding: 4%;
   margin: 2% auto;
   overflow: auto;

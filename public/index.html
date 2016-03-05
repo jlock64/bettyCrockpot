@@ -23,11 +23,11 @@
             </div>
             <div class="rightNav">
               <form class="signUp">
-                <h2 class="signUpHeader">Sign Up Here</h2>
+                <h2 class="signUpHeader">Sign Up</h2>
                 <div class="signUpWrapper">
                   <input name="newUsername" type="text" placeholder="create username">
                   <input name="newPassword" type="text" placeholder="create password">
-                  <button class="createButton">Create</button>
+                  <input name="createButton" type="submit" value="Create">
                 </div>
               </form>
             </div>
@@ -36,11 +36,22 @@
 
       <div class="bodyContent">
 
-        <section class="loading hide">
+        <div class="heroImg">
+          <h1>Get Your Grub On!</h1>
+          <h4>Create & Share Your Favorite Eats</h4>
+        </div>
+        <div class="navLinksWrapper">
+          <ul class="navLinks">
+            <div class="users"><li><a href="#">Users</a></li></div>
+            <div class="addRecipes"><li><a href="#">Add Recipe</a></li></div>
+            <div class="getRecipes"><li><a href="#">Get Recipes</a></li></div>
+          </ul>
+        </div>
+        <!-- <section class="loading hide">
           <div class="loading">
             <span><i class="fa fa-cog fa-spin"></i> Loading Page <i class="fa fa-cog fa-spin"></i></span>
           </div>
-        </section>
+        </section> -->
 
         <!-- <section class="loginPage hide">
           <form class="createNew" action="index.html" method="post">
@@ -78,11 +89,9 @@
           </article>
         </section>
 
-        <section class="dashboard">
-
-
-          <div class="profileContent">
-
+        <!-- <section class="dashboard"> -->
+          <div class="profileContent hide">
+            <button type="button" class="homeButton" name="Home">Home</button>
             <div class="userCard">
               <h1>Welcome user!</h1>
             </div>
@@ -118,7 +127,8 @@
           </div>
 
 
-          <div class="recipeForm">
+          <div class="recipeForm hide">
+            <button type="button" class="homeButton" name="Home">Home</button>
             <form class="newRecipe" action="index.html" method="post">
               <ul>
                 <li>
@@ -153,7 +163,7 @@
           </div>
 
 
-        </section>
+        <!-- </section> -->
 
 
       </div>
