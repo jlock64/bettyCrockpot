@@ -134,6 +134,12 @@ public class Main {
         stmt.setInt(1, recipeId);
         stmt.execute();
     }
+    public static void loggedInCheck (Session session, Connection conn) throws SQLException {
+        User user = getUserFromSession(session, conn);
+        if (user == null) {
+            Spark.halt(401, "USER NOT LOGGED IN");
+        }
+    }
 
     public static void main(String[] args) throws SQLException {
         Spark.externalStaticFileLocation("public");
@@ -155,6 +161,7 @@ public class Main {
         Spark.get(
                 "/getRecipesFromUser",
                 ((request, response) -> {
+                    loggedInCheck(request.session(), conn);
                     User user = getUserFromSession(request.session(), conn);
                     int userId = user.userId;
                     JsonSerializer serializer = new JsonSerializer();
@@ -174,9 +181,10 @@ public class Main {
                         return serializer.serialize(selectUser(conn, userName));
                     }
                     else if (user == null) {
-                        return "User Name not recognized. Please create an account!";
+                        Spark.halt(400, "USER NAME MUST NOT BE NULL");
                     }
                     else if (user.password != password) {
+                        Spark.halt(400, "PASSWORD DOES NOT MATCH");
                         return "User Name and/or password not recognized.";
                     }
                     return "";
@@ -213,6 +221,7 @@ public class Main {
         Spark.post(
                 "/addRecipe",
                 ((request, response) -> {
+                    loggedInCheck(request.session(), conn);
                     User user = getUserFromSession(request.session(), conn);
                     int userId = user.userId;
                     String recipeName = request.queryParams("recipeName");
@@ -228,6 +237,7 @@ public class Main {
         Spark.post(
                 "/deleteRecipe",
                 ((request, response) -> {
+                    loggedInCheck(request.session(), conn);
                     int recipeId = Integer.valueOf(request.queryParams("recipeId"));
                     deleteRecipe(conn, recipeId);
                     return "";
@@ -236,6 +246,7 @@ public class Main {
         Spark.post(
                 "/updateRecipe",
                 ((request, response) -> {
+                    loggedInCheck(request.session(), conn);
                     String recipeName = request.queryParams("recipeName");
                     String description = request.queryParams("description");
                     String ingredients = request.queryParams("ingredients");
