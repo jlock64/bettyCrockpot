@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("../images/128-168.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/128-168.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 149%;
@@ -52,7 +52,7 @@ button[name="home"] {
   width: 50px; }
 
 .heroImg {
-  background-image: url("../images/mainPhoto.jpg");
+  background-image: url("./images/mainPhoto.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px; }
@@ -98,13 +98,13 @@ div.navLinksWrapper {
     cursor: pointer;
     opacity: .7; }
   div.navLinksWrapper .users {
-    background-image: url("../images/users.jpg");
+    background-image: url("./images/users.jpg");
     margin-right: 18px; }
   div.navLinksWrapper .addRecipes {
-    background-image: url("../images/addRecipes.jpg");
+    background-image: url("./images/addRecipes.jpg");
     margin-right: 18px; }
   div.navLinksWrapper .getRecipes {
-    background-image: url("../images/getRecipe.jpeg"); }
+    background-image: url("./images/getRecipe.jpeg"); }
 
 section.dashboard {
   text-align: center; }
