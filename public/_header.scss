@@ -1,4 +1,5 @@
 header {
+  position: relative;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -36,15 +37,31 @@ header {
   }
   .signUpHeader {
     text-align: right;
+    float: right;
+    top: 98px;
+    position: absolute;
+    right: 10px;
+  }
+  .signUpHeader:hover {
+    cursor: pointer;
+    transform: scale(1.05);
   }
   .leftNav {
     display: inline-block;
     padding: 0px 0px 10px 10px;
   }
   .rightNav {
-    display: inline-block;
+    // display: inline-block;
+    // padding: 0px 10px 10px 0px;
+    // float: right;
+    display: none;
     padding: 0px 10px 10px 0px;
-    float: right;
+    /* float: right; */
+    position: absolute;
+    top: 72px;
+    // background-color: #9D0714;
+    padding: 20px;
+    right: 0px;
   }
   // .signUpWrapper {
   //   position: relative;
@@ -70,6 +87,17 @@ header {
     // box-shadow: 0px 0px 8px #fff;
   }
   input[type="text"] {
+    line-height: 20px;
+    font-size: 12px;
+    border: none;
+    border-radius: 26px;
+    text-align: left;
+    color: rgba(214,20,49,1);
+    font-weight: bold;
+    margin-right: 5px;
+    padding-left: 10px;
+  }
+  input[type="password"] {
     line-height: 20px;
     font-size: 12px;
     border: none;

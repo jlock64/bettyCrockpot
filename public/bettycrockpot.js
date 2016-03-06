@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 var page = {
   userName: '',
-  url: 'http://api.bigoven.com/recipe/',
+  // url: 'http://api.bigoven.com/recipe/',
   // keyWord: 'recipes?title_kw=chicken',
   recipeId: '530115',
   apiKey: '?api_key=i4mh8L358389f4Tfsq82EWZUUlO9268k',
@@ -73,25 +73,18 @@ var page = {
       $('.recipeForm').hide();
       $('.profileContent').hide();
     });
-
-
+    // SIGN UP BUTTON REVEAL SIGNUP MENU AND BUTTON DISSAPEARS
+    $('.signUpHeader').on('click', function() {
+      $('.rightNav').toggle();
+      $(this).hide();
+    });
   },
 
   //kicking off the load profile stuff
   submitLogin: function(event){
-    var user = page.getLoginFromDom();
+    var user = page.getLoginFromDom();  // returns username, password object
     console.log("USER LOGGED IN", user);
-    // var profile = page.findProfile(user);
-    //page.loadProfileToDom(profile);
-  },
-
-  findProfile: function(user){
-    //find data associated with this user password combo
-    //return data
-  },
-
-  loadProfileToDom: function(user){
-    //return looped, templated, recipes to append
+    page.findProfile(user);
   },
 
   getLoginFromDom: function(event){
@@ -106,11 +99,31 @@ var page = {
     };
   },
 
+  findProfile: function(user){
+    //find data associated with this user password combo
+    //return data
+    $.ajax({
+      url: '/login',
+      method: 'GET',
+      data: user,
+      success: function(response) {
+        page.loadProfileToDom(response);
+      }
+    })
+  },
+
+  loadProfileToDom: function(userProfile){
+    //return looped, templated, recipes to append
+
+  },
+
+
+
   //kicking off the new user feature
   submitNewUser: function(event){
     var newUser = page.getNewUserFromDom();
     console.log("NEW USER", newUser);
-    // page.addNewUserToDom(newUser);
+    page.addNewUserToDom(newUser);
   },
 
   //retrieve sign up info from DOM return object
@@ -130,16 +143,16 @@ var page = {
   //puts username into storage and on the page at Welcome user
   addNewUserToDom: function(newUser){
     $.ajax({
-      // url: ,
-      // method: 'POST',
-      // data: newUser,
-      // success: function(response){
-      //   var signature = _.template(templates.userCard);
-      //   $('.userCard').html(signature(newUser));
-      // },
-      // error: function(err){
-      //   console.log("error in addNewUserToDom", err);
-      // }
+      url: '/createUser',
+      method: 'POST',
+      data: newUser,
+      success: function(response){
+        var signature = _.template(templates.userCard);
+        $('.userCard').html(signature(newUser));
+      },
+      error: function(err){
+        console.log("error in addNewUserToDom", err);
+      }
     })
   },
 
@@ -147,7 +160,7 @@ var page = {
   submitNewRecipe: function(event){
     var newRecipe = page.getNewRecipeFromDom();
     console.log("new recipe info", newRecipe);
-    // page.addRecipe(newRecipe);
+    page.addRecipe(newRecipe);
   },
 
   //get new recipe from DOM return new object
@@ -178,30 +191,30 @@ var page = {
   //ajax call to push new recipe object
   addRecipe: function(newRecipe){
     $.ajax({
-      // url: ,
-      // method: 'POST',
-      // data: newRecipe,
-      // success: function(response){
-      //   page.getRecipes();
-      // },
-      // error: function(err){
-      //   console.log("error in addRecipe", err);
-      // }
+      url: '/addRecipe',
+      method: 'POST',
+      data: newRecipe,
+      success: function(response){
+        page.getRecipes();
+      },
+      error: function(err){
+        console.log("error in addRecipe", err);
+      }
     });
   },
 
   //ajax request to retrieve new object or array
   getRecipes: function(){
     $.ajax({
-      //  url: ,
-      //  method: 'GET',
-      //  success: function (recipes) {
-      //    console.log("GOT recipes", recipes);
-      //    page.addRecipesToDom(recipes);
-      //  },
-      //  error: function (err) {
-      //    console.log("ERROR in getRecipes", err);
-      //  }
+       url: '/getRecipesFromUser',
+       method: 'GET',
+       success: function (recipes) {
+         console.log("GOT recipes", recipes);
+         page.addRecipesToDom(recipes);
+       },
+       error: function (err) {
+         console.log("ERROR in getRecipes", err);
+       }
      });
   },
 
@@ -213,6 +226,15 @@ var page = {
       $('.articleWrapper').append(signature(el));
     });
   },
+
+
+
+
+
+
+
+
+
 
   // BUILD URL //
   buildUrl: function() {

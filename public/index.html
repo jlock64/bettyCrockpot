@@ -1,175 +1,193 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Betty Crockpot</title>
-  <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
-  <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
-</head>
-<body>
-<div class="mainContainer">
-  <header>
-    <div class="headerContainer">
-      <h1>BettyCrockpot</h1>
-      <div class="leftNav">
-        <!--<form class="login" action="" method="">-->
-        <h2 class="loginHeader">Login</h2>
-        <input name="username" type="text" placeholder="username">
-        <button>Submit</button>
-        <input name="password" type="text" placeholder="password">
-        <!--<input name="loginButton" type="submit" value="Let's Go">-->
-        <!--</form>-->
-      </div>
-      <div class="rightNav">
-        <form class="signUp">
-          <h2 class="signUpHeader">Sign Up</h2>
-          <div class="signUpWrapper">
-            <input name="newUsername" type="text" placeholder="create username">
-            <input name="newPassword" type="text" placeholder="create password">
-            <input name="createButton" type="submit" value="Create">
+  <head>
+    <meta charset="utf-8">
+    <title>Betty Crockpot</title>
+    <link rel="stylesheet" src="//normalize-css.googlecode.com/svn/trunk/normalize.css" />
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
+  </head>
+  <body>
+    <div class="mainContainer">
+      <header>
+          <div class="headerContainer">
+            <h1>BettyCrockpot</h1>
+            <div class="leftNav">
+              <form class="login" action="" method="">
+                <h2 class="loginHeader">Login</h2>
+                <input name="username" type="text" placeholder="username">
+                <input name="password" type="password" placeholder="password">
+                <input name="loginButton" type="submit" value="Let's Go">
+              </form>
+            </div>
+            <h2 class="signUpHeader">Click Here to Sign Up</h2>
+            <div class="rightNav">
+              <form class="signUp">
+                <!-- <h2 class="signUpHeader">Sign Up</h2> -->
+                <div class="signUpWrapper">
+                  <input name="newUsername" type="text" placeholder="create username">
+                  <input name="newPassword" type="password" placeholder="create password">
+                  <input name="createButton" type="submit" value="Create">
+                </div>
+              </form>
+            </div>
           </div>
-        </form>
+      </header>
+
+      <div class="bodyContent">
+
+        <div class="heroImg">
+          <h1>Get Your Grub On!</h1>
+          <h4>Create & Share Your Favorite Eats</h4>
+        </div>
+        <div class="navLinksWrapper">
+          <ul class="navLinks">
+            <div class="users"><li><a href="#">Users</a></li></div>
+            <div class="addRecipes"><li><a href="#">Add Recipe</a></li></div>
+            <div class="getRecipes"><li><a href="#">Get Recipes</a></li></div>
+          </ul>
+        </div>
+        <!-- <section class="loading hide">
+          <div class="loading">
+            <span><i class="fa fa-cog fa-spin"></i> Loading Page <i class="fa fa-cog fa-spin"></i></span>
+          </div>
+        </section> -->
+
+        <!-- <section class="loginPage hide">
+          <form class="createNew" action="index.html" method="post">
+            <div class="loginInfoWrapper">
+              <input type="text" name="newUsername" value="username">
+              <input type="text" name="newPassword" value="password">
+              <input type="submit" name="login" value="login">
+            </div>
+          </form>
+        </section> -->
+
+        <section class="homeGrid hide"> <!-- load screen -->
+          <article> <!-- template -->
+            <a href="#" class="collumnTop"><!-- links to recipe page doubles as wrapper -->
+              <img src="" alt="">
+              <h3 class="recipeTitle"></h3>
+            </a>
+            <a href="#" class="collumnMiddle"><!-- links to recipe page doubles as wrapper -->
+              <div class="recipeCard"><!-- Recipe Description --></div>
+            </a>
+            <div class="collumnBottom">
+              <a href="#" class="cardToProfile"><!-- links to profile page -->
+                <ul class="cookDetails">
+                  <li class="cookIcon"></li>
+                  <li class="credit">
+                    <h4><span>Recipe by </span><!-- username --></h4>
+                  </li>
+                  <li class="favs">
+                    <span><!-- icon --></span>
+                    <span><!-- number of fav clicks --></span>
+                  </li>
+                </ul>
+              </a>
+            </div>
+          </article>
+        </section>
+
+        <!-- <section class="dashboard"> -->
+          <div class="profileContent hide">
+            <button type="button" class="homeButton" name="Home">Home</button>
+            <div class="userCard">
+              <h1>Welcome user!</h1>
+            </div>
+
+            <div class="articleWrapper">
+              <article class="recipeCard">
+                <div class="title">
+                  <h2>Rockin Chicken</h2>
+                </div>
+                <div class="description">
+                  <h6>The hottest chicken you'll ever make.</h6>
+                </div>
+                <div class="cardLeft">
+                    <h4>Ingredients: </h4>
+                    <div class="ingredients">
+                      <p>Chicken, Grapeseed Oil, Ghost Pepper</p>
+                    </div>
+                    <div class="times">
+                      <h4>Prep Time: </h4><div class="prep"><p>Depends on your skill level.</p></div>
+                      <h4>Cook Time: </h4><div class="cook"><p>Depends on how hot your pan is.</p></div>
+                    </div>
+                </div>
+                <div class="cardRight">
+                    <h4>Directions: </h4>
+                    <div class="directions">
+                      <p>Wash it. Heat oil in pan. Puree Ghost pepper. Apply to chicken. Salt to taste. Plop in hot oil. Cook till done. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    </div>
+                </div>
+              </article>
+            </div>
+
+
+          </div>
+
+
+          <div class="recipeForm hide">
+            <button type="button" class="homeButton" name="Home">Home</button>
+            <form class="newRecipe" action="index.html" method="post">
+              <ul>
+                <li>
+                  <label for="title">Recipe Title</label>
+                  <input type="text" name="title">
+                </li>
+                <li>
+                  <label for="description">Description</label>
+                  <textarea name="description" rows="5" cols="20"></textarea>
+                </li>
+                <li>
+                  <label for="ingredients">Ingredients</label>
+                  <textarea name="ingredients" rows="8" cols="40" placeholder=""></textarea>
+                </li>
+                <li>
+                  <label for="directions">Directions</label>
+                  <textarea name="directions" rows="8" cols="40" placeholder=""></textarea>
+                </li>
+                <li>
+                  <label for="prepTime">Prep Time</label>
+                  <input type="text" name="prepTime" value="">
+                </li>
+                <li>
+                  <label for="cookTime">Cook Time</label>
+                  <input type="text" name="cookTime" value="">
+                </li>
+                <li>
+                  <input type="submit" name="submitRecipe" value="Submit">
+                </li>
+              </ul>
+            </form>
+          </div>
+
+
+        <!-- </section> -->
+
+
       </div>
-    </div>
-  </header>
-  <div class="bodyContent">
-    <div class="heroImg">
-      <h1>Get Your Grub On!</h1>
-      <h4>Create & Share Your Favorite Eats</h4>
-    </div>
-    <div class="navLinksWrapper">
-      <ul class="navLinks">
-        <div class="users"><li><a href="#">Users</a></li></div>
-        <div class="addRecipes"><li><a href="#">Add Recipe</a></li></div>
-        <div class="getRecipes"><li><a href="#">Get Recipes</a></li></div>
+  <!-- END OF MAIN CONTAINER -->
+
+    <footer>
+      <ul class="footer">
+        <li>About us</li>
+        <li>Contact us</li>
+        <li>Thanks to BigOven!</li>
       </ul>
-    </div>
-    <!-- <section class="loading hide">
-      <div class="loading">
-        <span><i class="fa fa-cog fa-spin"></i> Loading Page <i class="fa fa-cog fa-spin"></i></span>
-      </div>
-    </section> -->
-    <!-- <section class="loginPage hide">
-      <form class="createNew" action="index.html" method="post">
-        <div class="loginInfoWrapper">
-          <input type="text" name="newUsername" value="username">
-          <input type="text" name="newPassword" value="password">
-          <input type="submit" name="login" value="login">
-        </div>
-      </form>
-    </section> -->
-    <section class="homeGrid hide"> <!-- load screen -->
-      <article> <!-- template -->
-        <a href="#" class="collumnTop"><!-- links to recipe page doubles as wrapper -->
-          <img src="" alt="">
-          <h3 class="recipeTitle"></h3>
-        </a>
-        <a href="#" class="collumnMiddle"><!-- links to recipe page doubles as wrapper -->
-          <div class="recipeCard"><!-- Recipe Description --></div>
-        </a>
-        <div class="collumnBottom">
-          <a href="#" class="cardToProfile"><!-- links to profile page -->
-            <ul class="cookDetails">
-              <li class="cookIcon"></li>
-              <li class="credit">
-                <h4><span>Recipe by </span><!-- username --></h4>
-              </li>
-              <li class="favs">
-                <span><!-- icon --></span>
-                <span><!-- number of fav clicks --></span>
-              </li>
-            </ul>
-          </a>
-        </div>
-      </article>
-    </section>
-    <!-- <section class="dashboard"> -->
-    <div class="profileContent hide">
-      <button type="button" class="homeButton" name="Home">Home</button>
-      <div class="userCard">
-        <h1>Welcome user!</h1>
-      </div>
-      <div class="articleWrapper">
-        <article class="recipeCard">
-          <div class="title">
-            <h2>Rockin Chicken</h2>
-          </div>
-          <div class="description">
-            <h6>The hottest chicken you'll ever make.</h6>
-          </div>
-          <div class="cardLeft">
-            <h4>Ingredients: </h4>
-            <div class="ingredients">
-              <p>Chicken, Grapeseed Oil, Ghost Pepper</p>
-            </div>
-            <div class="times">
-              <h4>Prep Time: </h4><div class="prep"><p>Depends on your skill level.</p></div>
-              <h4>Cook Time: </h4><div class="cook"><p>Depends on how hot your pan is.</p></div>
-            </div>
-          </div>
-          <div class="cardRight">
-            <h4>Directions: </h4>
-            <div class="directions">
-              <p>Wash it. Heat oil in pan. Puree Ghost pepper. Apply to chicken. Salt to taste. Plop in hot oil. Cook till done. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            </div>
-          </div>
-        </article>
-      </div>
-    </div>
-    <div class="recipeForm hide">
-      <button type="button" class="homeButton" name="Home">Home</button>
-      <form class="newRecipe" action="index.html" method="post">
-        <ul>
-          <li>
-            <label for="title">Recipe Title</label>
-            <input type="text" name="title">
-          </li>
-          <li>
-            <label for="description">Description</label>
-            <textarea name="description" rows="5" cols="20"></textarea>
-          </li>
-          <li>
-            <label for="ingredients">Ingredients</label>
-            <textarea name="ingredients" rows="8" cols="40" placeholder=""></textarea>
-          </li>
-          <li>
-            <label for="directions">Directions</label>
-            <textarea name="directions" rows="8" cols="40" placeholder=""></textarea>
-          </li>
-          <li>
-            <label for="prepTime">Prep Time</label>
-            <input type="text" name="prepTime" value="">
-          </li>
-          <li>
-            <label for="cookTime">Cook Time</label>
-            <input type="text" name="cookTime" value="">
-          </li>
-          <li>
-            <input type="submit" name="submitRecipe" value="Submit">
-          </li>
-        </ul>
-      </form>
-    </div>
-    <!-- </section> -->
+      <ul class="footer">
+        <li><i class="fa fa-copyright"></i>2016 BettyCrockpot</li>
+        <li>All Rights Reserved</li>
+      </ul>
+    </footer>
+
+  <!-- END OF MAIN CONTAINER -->
+
   </div>
-  <!-- END OF MAIN CONTAINER -->
-  <footer>
-    <ul class="footer">
-      <li>About us</li>
-      <li>Contact us</li>
-      <li>Thanks to BigOven!</li>
-    </ul>
-    <ul class="footer">
-      <li><i class="fa fa-copyright"></i>2016 BettyCrockpot</li>
-      <li>All Rights Reserved</li>
-    </ul>
-  </footer>
-  <!-- END OF MAIN CONTAINER -->
-</div>
-<script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
-<script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
-<script type="text/javascript" src="bettycrockpot.js"></script>
-</body>
+
+  <script src="bower_components/underscore/underscore.js" charset="utf-8"></script>
+  <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
+  <script type="text/javascript" src="bettycrockpot.js"></script>
+  </body>
 </html>
