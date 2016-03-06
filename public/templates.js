@@ -8,7 +8,7 @@ var templates = {
         '<h2> <%= recipeName %> </h2>',
       '</div>',
       '<button type="button" name="delete" id="delete">Delete</button>',
-      '<button type="button" name="edit" id="edit">Edit</button>',
+      // '<button type="button" name="edit" id="edit">Edit</button>',
       '<div class="description">',
         '<h6> <%= description %> </h6>',
       '</div>',
