@@ -3,10 +3,12 @@ var templates = {
       '<h1>Welcome <%= userName %>!</h1>'
   ].join(''),
   recipeCardBig: [
-    '<article class="recipeCard">',
+    '<article class="recipeCard" data-postid="<%= recipeId %>">',
       '<div class="title">',
         '<h2> <%= recipeName %> </h2>',
       '</div>',
+      '<button type="button" name="delete" id="delete">Delete</button>',
+      '<button type="button" name="edit" id="edit">Edit</button>',
       '<div class="description">',
         '<h6> <%= description %> </h6>',
       '</div>',

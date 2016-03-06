@@ -66,7 +66,23 @@ var page = {
       $('.profileContent').hide();
       $('.articleWrapper').html('');
       $('.userCard').html('');
-    })
+    });
+
+    $('.articleWrapper').on('click', '#delete', function(event){
+      event.preventDefault();
+      // console.log($(this).closest('article'));
+      var recipeId = $(this).closest('article').data('postid');
+      console.log("delete CLICKED", recipeId);
+      page.deleteRecipe(recipeId);
+    });
+
+    $('.articleWrapper').on('click', '#edit', function(event){
+      event.preventDefault();
+      // console.log($(this).closest('article'));
+      var recipeId = $(this).closest('article').data('postid');
+      console.log("delete CLICKED", recipeId);
+      page.editRecipe(recipeId);
+    });
 
     // $('form.newRecipe').on('submit', page.submitNewRecipe);
 
@@ -101,13 +117,53 @@ var page = {
     });
   },
 
+  deleteRecipe: function(recipeId){
+    console.log(recipeId);
+    $.ajax({
+      url: '/deleteRecipe',
+      method: 'POST',
+      data:{recipeId:recipeId},
+      success: function(response){
+        console.log("response from deleteRecipe", response);
+        page.loadProfileToDom();
+      },
+      error: function (err) {
+        console.log("error in deleteRecipe", err);
+      },
+    });
+  },
+
+  // $('span').bind('dblclick',
+  // function(){
+  //     $(this).attr('contentEditable',true);
+  // });
+
+  editRecipe: function(recipeId){
+    
+  };
+
+  updateRecipe: function(recipeId){
+    $.ajax({
+      url: '/updateRecipe',
+      method: 'POST',
+      data:{recipeId:recipeId},
+      success: function(response){
+        console.log("response from updateRecipe", response);
+        page.loadProfileToDom();
+      },
+      error: function (err) {
+        console.log("error in updateRecipe", err);
+      },
+    });
+  },
+
   logout: function(){
     $.ajax({
       url: '/logout',
       method: 'POST',
       success: function(response) {
-        console.log("response from logout", response);
-        // page.loadProfileToDom(response);
+        console.log("response from logout");
+        page.loadProfileToDom();
       },
       error: function(err){
         console.log("error in LOGOUT", err);
