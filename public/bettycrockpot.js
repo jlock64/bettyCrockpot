@@ -100,6 +100,7 @@ var page = {
   getLoginFromDom: function(event){
     var username = $('input[name="username"]').val();
     var password = $('input[name="password"]').val();
+    page.userName = username;
     $('input[name="username"]').val('');
     $('input[name="password"]').val('');
     // console.log(username, password);
