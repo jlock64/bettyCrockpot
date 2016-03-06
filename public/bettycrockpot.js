@@ -94,16 +94,17 @@ var page = {
   submitLogin: function(event){
     var user = page.getLoginFromDom();  // returns username, password object
     console.log("USER LOGGED IN", user);
+    var signature = _.template(templates.userCard);
+    $('.userCard').html(signature(user));
     page.findProfile(user);
   },
 
   getLoginFromDom: function(event){
     var username = $('input[name="username"]').val();
     var password = $('input[name="password"]').val();
-    page.userName = username;
+    console.log(username, password);
     $('input[name="username"]').val('');
     $('input[name="password"]').val('');
-    // console.log(username, password);
     return {
       userName: username,
       password: password
@@ -230,19 +231,13 @@ var page = {
       url: '/addRecipe',
       method: 'POST',
       data: newRecipe,
-      dataType: 'json',
       success: function(response){
         console.log("LOGGED THE RESPONSE TO ADD RECIPE", response);
         page.getRecipes();
       },
-      error: function (xhr, ajaxOptions, thrownError) {
-           console.log(xhr.status);
-           console.log(xhr.responseText);
-           console.log(thrownError);
-       }
-      // function(err){
-      //   console.log("error in addRecipe", err);
-      // }
+      error: function(err){
+        console.log("error in addRecipe", err);
+      }
     });
   },
 
@@ -253,7 +248,8 @@ var page = {
        method: 'GET',
        success: function (recipes) {
          console.log("GOT recipes", recipes);
-         page.addRecipesToDom(recipes);
+         var newRecipes = JSON.parse(recipes)
+         page.addRecipesToDom(newRecipes);
        },
        error: function (err) {
          console.log("ERROR in getRecipes", err);
