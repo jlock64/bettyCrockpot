@@ -11,9 +11,9 @@ public class Recipe {
     String prepTime;
     String cookTime;
 
-    public Recipe(int recipeId, int recipeUserId, String recipeName, String description, String ingredients, String preparation, String prepTime, String cookTime) {
+    public Recipe(int recipeId, int recipeJoinId, String recipeName, String description, String ingredients, String preparation, String prepTime, String cookTime) {
         this.recipeId = recipeId;
-        this.recipeJoinId = recipeUserId;
+        this.recipeJoinId = recipeJoinId;
         this.recipeName = recipeName;
         this.description = description;
         this.ingredients = ingredients;
