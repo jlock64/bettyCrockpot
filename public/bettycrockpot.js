@@ -57,6 +57,33 @@ var page = {
       $('.recipeForm').hide();
     });
 
+    $('#logout').on('click', function(event){
+      event.preventDefault();
+      console.log("logout CLICKED", event);
+      page.logout();
+      $('.heroImg').show();
+      $('.recipeForm').hide();
+      $('.profileContent').hide();
+      $('.articleWrapper').html('');
+      $('.userCard').html('');
+    });
+
+    $('.articleWrapper').on('click', '#delete', function(event){
+      event.preventDefault();
+      // console.log($(this).closest('article'));
+      var recipeId = $(this).closest('article').data('postid');
+      console.log("delete CLICKED", recipeId);
+      page.deleteRecipe(recipeId);
+    });
+
+    $('.articleWrapper').on('click', '#edit', function(event){
+      event.preventDefault();
+      // console.log($(this).closest('article'));
+      var recipeId = $(this).closest('article').data('postid');
+      console.log("delete CLICKED", recipeId);
+      page.editRecipe(recipeId);
+    });
+
     // $('form.newRecipe').on('submit', page.submitNewRecipe);
 
     // USERS PAGE LINK
@@ -90,19 +117,75 @@ var page = {
     });
   },
 
+  deleteRecipe: function(recipeId){
+    console.log(recipeId);
+    $.ajax({
+      url: '/deleteRecipe',
+      method: 'POST',
+      data:{recipeId:recipeId},
+      success: function(response){
+        console.log("response from deleteRecipe", response);
+        page.loadProfileToDom();
+      },
+      error: function (err) {
+        console.log("error in deleteRecipe", err);
+      },
+    });
+  },
+
+  // $('span').bind('dblclick',
+  // function(){
+  //     $(this).attr('contentEditable',true);
+  // });
+
+  editRecipe: function(recipeId){
+    
+  };
+
+  updateRecipe: function(recipeId){
+    $.ajax({
+      url: '/updateRecipe',
+      method: 'POST',
+      data:{recipeId:recipeId},
+      success: function(response){
+        console.log("response from updateRecipe", response);
+        page.loadProfileToDom();
+      },
+      error: function (err) {
+        console.log("error in updateRecipe", err);
+      },
+    });
+  },
+
+  logout: function(){
+    $.ajax({
+      url: '/logout',
+      method: 'POST',
+      success: function(response) {
+        console.log("response from logout");
+        page.loadProfileToDom();
+      },
+      error: function(err){
+        console.log("error in LOGOUT", err);
+      }
+    });
+  },
+
   //kicking off the load profile stuff
   submitLogin: function(event){
     var user = page.getLoginFromDom();  // returns username, password object
     console.log("USER LOGGED IN", user);
-    // page.findProfile(user);
+    var signature = _.template(templates.userCard);
+    $('.userCard').html(signature(user));
+    page.findProfile(user);
   },
 
   getLoginFromDom: function(event){
     var username = $('input[name="username"]').val();
     var password = $('input[name="password"]').val();
+    console.log(username, password);
     $('input[name="username"]').val('');
     $('input[name="password"]').val('');
-    // console.log(username, password);
     return {
       userName: username,
       password: password
@@ -114,18 +197,42 @@ var page = {
     //return data
     $.ajax({
       url: '/login',
-      method: 'GET',
+      method: 'POST',
       data: user,
       success: function(response) {
         console.log("response from find profile", response);
         page.loadProfileToDom(response);
+      },
+      error: function(err){
+        console.log("error in findPROFILE", err);
       }
     })
   },
 
   loadProfileToDom: function(userProfile){
     //return looped, templated, recipes to append
+    $.ajax({
+       url: '/getRecipesFromUser',
+       method: 'GET',
+       success: function (recipes) {
+         console.log("GOT recipes", recipes);
+         var parsedRecipes = JSON.parse(recipes)
+         console.log("parsed json", parsedRecipes);
+         page.loopOverDataForRecipes(parsedRecipes);
+       },
+       error: function (err) {
+         console.log("ERROR in loadProfileToDom", err);
+       }
+     });
+  },
 
+  loopOverDataForRecipes: function (recipesArr){
+    $('.articleWrapper').html('');
+    _.each(recipesArr, function (el) {
+      console.log('this is the recipe loop',el);
+      var signature = _.template(templates.recipeCardBig);
+      $('.articleWrapper').append(signature(el));
+    });
   },
 
 
@@ -206,19 +313,13 @@ var page = {
       url: '/addRecipe',
       method: 'POST',
       data: newRecipe,
-      dataType: 'json',
       success: function(response){
         console.log("LOGGED THE RESPONSE TO ADD RECIPE", response);
         page.getRecipes();
       },
-      error: function (xhr, ajaxOptions, thrownError) {
-           console.log(xhr.status);
-           console.log(xhr.responseText);
-           console.log(thrownError);
-       }
-      // function(err){
-      //   console.log("error in addRecipe", err);
-      // }
+      error: function(err){
+        console.log("error in addRecipe", err);
+      }
     });
   },
 
@@ -229,7 +330,8 @@ var page = {
        method: 'GET',
        success: function (recipes) {
          console.log("GOT recipes", recipes);
-         page.addRecipesToDom(recipes);
+         var newRecipes = JSON.parse(recipes)
+         page.addRecipesToDom(newRecipes);
        },
        error: function (err) {
          console.log("ERROR in getRecipes", err);
