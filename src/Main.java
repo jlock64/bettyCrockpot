@@ -159,7 +159,7 @@ public class Main {
         Spark.post(
                 "/login",
                 ((request, response)-> {
-                    String userName = request.queryParams("username");  // ****NOT SURE ABOUT PARAMETER NAMES
+                    String userName = request.queryParams("userName");  // ****NOT SURE ABOUT PARAMETER NAMES
                     String password = request.queryParams("password");  // ********
                     User user = selectUser(conn, userName);
                     Session session = request.session();
@@ -188,8 +188,8 @@ public class Main {
         Spark.post(
                 "/createUser",
                 ((request, response) -> {
-                    String userName = request.queryParams("newUsername");
-                    String password = request.queryParams("newPassword");
+                    String userName = request.queryParams("userName");
+                    String password = request.queryParams("password");
                     Session session = request.session();
                     JsonSerializer serializer = new JsonSerializer();
                     if (userName == null) {
