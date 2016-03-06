@@ -80,8 +80,10 @@ var page = {
       event.preventDefault();
       // console.log($(this).closest('article'));
       var recipeId = $(this).closest('article').data('postid');
-      console.log("delete CLICKED", recipeId);
+      console.log("edit CLICKED");
       page.editRecipe(recipeId);
+      var editedRecipe =
+      page.updateRecipe(editedRecipe);
     });
 
     // $('form.newRecipe').on('submit', page.submitNewRecipe);
@@ -139,14 +141,34 @@ var page = {
   // });
 
   editRecipe: function(recipeId){
-    
-  };
+    var title = $('input[name="title"]').val();
+    $('input[name="title"]').val('');
+    var description = $('textarea[name="description"]').val();
+    $('textarea[name="description"]').val('');
+    var ingredients = $('textarea[name="ingredients"]').val();
+    $('textarea[name="ingredients"]').val('');
+    var preparation = $('textarea[name="directions"]').val();
+    $('textarea[name="directions"]').val('');
+    var prepTime = $('input[name="prepTime"]').val();
+    $('input[name="prepTime"]').val('');
+    var cookTime = $('input[name="cookTime"]').val();
+    $('input[name="cookTime"]').val('');
+    return {
+      recipeId: recipeId,
+      recipeName: title,
+      description: description,
+      ingredients: ingredients,
+      preparation: preparation,
+      prepTime: prepTime,
+      cookTime: cookTime
+    };
+  },
 
-  updateRecipe: function(recipeId){
+  updateRecipe: function(editedRecipe){
     $.ajax({
       url: '/updateRecipe',
       method: 'POST',
-      data:{recipeId:recipeId},
+      data: editedRecipe,
       success: function(response){
         console.log("response from updateRecipe", response);
         page.loadProfileToDom();
