@@ -178,6 +178,14 @@ public class Main {
                 })
         );
         Spark.post(
+                "/logout",
+                ((request, response) -> {
+                    Session session = request.session();
+                    session.invalidate();
+                    return "";
+                })
+        );
+        Spark.post(
                 "/createUser",
                 ((request, response) -> {
                     String userName = request.queryParams("newUsername");
