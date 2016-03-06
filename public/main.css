@@ -52,7 +52,7 @@ button[name="home"] {
   width: 50px; }
 
 .heroImg {
-  background-image: url("../images/mainPhoto.jpg");
+  background-image: url("./images/mainPhoto.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px; }
@@ -98,13 +98,13 @@ div.navLinksWrapper {
     cursor: pointer;
     opacity: .7; }
   div.navLinksWrapper .users {
-    background-image: url("../images/users.jpg");
+    background-image: url("./images/users.jpg");
     margin-right: 18px; }
   div.navLinksWrapper .addRecipes {
-    background-image: url("../images/addRecipes.jpg");
+    background-image: url("./images/addRecipes.jpg");
     margin-right: 18px; }
   div.navLinksWrapper .getRecipes {
-    background-image: url("../images/getRecipe.jpeg"); }
+    background-image: url("./images/getRecipe.jpeg"); }
 
 section.dashboard {
   text-align: center; }
