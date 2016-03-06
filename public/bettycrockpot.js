@@ -94,7 +94,7 @@ var page = {
     $('input[name="password"]').val('');
     // console.log(username, password);
     return {
-      username: username,
+      userName: username,
       password: password
     };
   },
@@ -135,7 +135,7 @@ var page = {
     // console.log("new user info", username, password);
     page.userName = username;
     return {
-      username: username,
+      userName: username,
       password: password
     };
   },
