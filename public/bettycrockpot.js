@@ -94,7 +94,7 @@ var page = {
   submitLogin: function(event){
     var user = page.getLoginFromDom();  // returns username, password object
     console.log("USER LOGGED IN", user);
-    // page.findProfile(user);
+    page.findProfile(user);
   },
 
   getLoginFromDom: function(event){
@@ -115,11 +115,14 @@ var page = {
     //return data
     $.ajax({
       url: '/login',
-      method: 'GET',
+      method: 'POST',
       data: user,
       success: function(response) {
         console.log("response from find profile", response);
         page.loadProfileToDom(response);
+      },
+      error: function(err){
+        console.log("error in findPROFILE", err);
       }
     })
   },
