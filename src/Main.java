@@ -1,5 +1,4 @@
 import jodd.json.JsonSerializer;
-import spark.ModelAndView;
 import spark.Session;
 import spark.Spark;
 
@@ -139,8 +138,6 @@ public class Main {
         Spark.externalStaticFileLocation("public");
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         createTables(conn);
-
-        insertRecipe(conn, 2, "tacos", "sdfa", "test", "test", "test", "test");
 
         Spark.init();
         Spark.get(
