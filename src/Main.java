@@ -139,6 +139,9 @@ public class Main {
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         createTables(conn);
 
+        insertUser(conn, "DUDE", "D");
+        insertRecipe(conn, 1, "SPAGHETTI!!!", "LOTS OF SPAGHETTI", "SPAGHTTI THINGS", "PREPARE THE SPAGHETTI", "PREP THAT SHIT!", "COOK IT! DO IT!");
+
         Spark.init();
         Spark.get(
                 "/getRecipes",
@@ -159,7 +162,7 @@ public class Main {
         Spark.post(
                 "/login",
                 ((request, response)-> {
-                    String userName = request.queryParams("username");  // ****NOT SURE ABOUT PARAMETER NAMES
+                    String userName = request.queryParams("userName");  // ****NOT SURE ABOUT PARAMETER NAMES
                     String password = request.queryParams("password");  // ********
                     User user = selectUser(conn, userName);
                     Session session = request.session();
@@ -178,10 +181,18 @@ public class Main {
                 })
         );
         Spark.post(
+                "/logout",
+                ((request, response) -> {
+                    Session session = request.session();
+                    session.invalidate();
+                    return "";
+                })
+        );
+        Spark.post(
                 "/createUser",
                 ((request, response) -> {
-                    String userName = request.queryParams("newUsername");
-                    String password = request.queryParams("newPassword");
+                    String userName = request.queryParams("userName");
+                    String password = request.queryParams("password");
                     Session session = request.session();
                     JsonSerializer serializer = new JsonSerializer();
                     if (userName == null) {

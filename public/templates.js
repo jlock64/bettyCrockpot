@@ -1,11 +1,11 @@
 var templates = {
-  userCard = [
-      '<h1>Welcome <%= username %>!</h1>'
+  userCard: [
+      '<h1>Welcome <%= userName %>!</h1>'
   ].join(''),
   recipeCardBig: [
     '<article class="recipeCard">',
       '<div class="title">',
-        '<h2> <%= title %> </h2>',
+        '<h2> <%= recipeName %> </h2>',
       '</div>',
       '<div class="description">',
         '<h6> <%= description %> </h6>',
