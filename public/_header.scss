@@ -8,6 +8,9 @@ header {
   // background: -o-linear-gradient(rgba(214,20,49,1), rgba(214,20,49,.9)); /* For Opera 11.1 to 12.0 */
   // background: -moz-linear-gradient(rgba(214,20,49,1), rgba(214,20,49,.9)); /* For Firefox 3.6 to 15 */
   // background: linear-gradient(rgba(214,20,49,1), rgba(214,20,49,.9)); /* Standard syntax */
+&:after {
+  clear: both;
+}
   .headerContainer {
     margin: 0 auto;
     width: 100%;
@@ -21,6 +24,9 @@ header {
     color: #fff;
     font-family: serif;
     text-shadow: 2px 2px 10px #000;
+  }
+  h1:hover {
+    cursor: pointer;
   }
   h2 {
     margin: 0;
@@ -41,6 +47,7 @@ header {
     top: 98px;
     position: absolute;
     right: 10px;
+    transition: .1s all ease-in-out;
   }
   .signUpHeader:hover {
     cursor: pointer;
@@ -61,7 +68,7 @@ header {
     top: 72px;
     // background-color: #9D0714;
     padding: 20px;
-    right: 0px;
+    right: -10px;
   }
   // .signUpWrapper {
   //   position: relative;

@@ -55,6 +55,7 @@ button[name="home"] {
   background-image: url("./images/mainPhoto.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 400px; }
   .heroImg h1 {
     margin-bottom: 5px;
@@ -73,6 +74,8 @@ button[name="home"] {
 div.navLinksWrapper {
   width: 100%;
   text-align: center; }
+  div.navLinksWrapper ul {
+    display: flex; }
   div.navLinksWrapper .navLinks {
     margin: 0;
     padding: 0;
@@ -87,24 +90,30 @@ div.navLinksWrapper {
     font-size: 30px;
     text-shadow: 2px 2px 20px #000; }
   div.navLinksWrapper .users, div.navLinksWrapper .addRecipes, div.navLinksWrapper .getRecipes {
-    width: 31.6%;
+    width: 33.3%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     height: 150px;
     margin-top: 20px;
     display: inline-block; }
-  div.navLinksWrapper .users:hover, div.navLinksWrapper .addRecipes:hover, div.navLinksWrapper .getRecipes:hover {
-    cursor: pointer;
-    opacity: .7; }
   div.navLinksWrapper .users {
-    background-image: url("./images/users.jpg");
+    background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/users.jpg");
     margin-right: 18px; }
+    div.navLinksWrapper .users:hover {
+      background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/users.jpg");
+      cursor: pointer; }
   div.navLinksWrapper .addRecipes {
-    background-image: url("./images/addRecipes.jpg");
+    background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/addRecipes.jpg");
     margin-right: 18px; }
+    div.navLinksWrapper .addRecipes:hover {
+      background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/addRecipes.jpg");
+      cursor: pointer; }
   div.navLinksWrapper .getRecipes {
-    background-image: url("./images/getRecipe.jpeg"); }
+    background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/addRecipes.jpg"); }
+    div.navLinksWrapper .getRecipes:hover {
+      background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/addRecipes.jpg");
+      cursor: pointer; }
 
 section.dashboard {
   text-align: center; }
@@ -115,6 +124,8 @@ header {
   padding: 0;
   width: 100%;
   background-color: #9D0714; }
+  header:after {
+    clear: both; }
   header .headerContainer {
     margin: 0 auto;
     width: 100%; }
@@ -127,6 +138,8 @@ header {
     color: #fff;
     font-family: serif;
     text-shadow: 2px 2px 10px #000; }
+  header h1:hover {
+    cursor: pointer; }
   header h2 {
     margin: 0;
     padding: 0;
@@ -143,7 +156,8 @@ header {
     float: right;
     top: 98px;
     position: absolute;
-    right: 10px; }
+    right: 10px;
+    transition: .1s all ease-in-out; }
   header .signUpHeader:hover {
     cursor: pointer;
     transform: scale(1.05); }
@@ -157,7 +171,7 @@ header {
     position: absolute;
     top: 72px;
     padding: 20px;
-    right: 0px; }
+    right: -10px; }
   header input[type="submit"] {
     line-height: 16px;
     font-size: 13px;

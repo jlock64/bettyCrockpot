@@ -14,9 +14,11 @@ button[name="home"] {
 }
 
 .heroImg {
+  // background-image: linear-gradient(rgba(50, 50, 50, 0.4), rgba(50, 50, 50, 0.4)), url("./images/mainPhoto.jpg");
   background-image: url('./images/mainPhoto.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   height: 400px;
   h1 {
     margin-bottom: 5px;
@@ -38,6 +40,9 @@ button[name="home"] {
 div.navLinksWrapper {
   width: 100%;
   text-align: center;;
+  ul {
+    display: flex;
+  }
   .navLinks {
     margin: 0;
     padding: 0;
@@ -55,7 +60,7 @@ div.navLinksWrapper {
     text-shadow: 2px 2px 20px #000;
   }
   .users, .addRecipes, .getRecipes{
-    width: 31.6%;
+    width: 33.3%;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -63,21 +68,29 @@ div.navLinksWrapper {
     margin-top: 20px;
     display: inline-block;
   }
-  .users:hover, .addRecipes:hover, .getRecipes:hover {
-    cursor: pointer;
-    opacity: .7;
-  }
   .users {
-    // background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2));
-    background-image: url('./images/users.jpg');
+    background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/users.jpg");
+    // background-image: lin  url('./images/users.jpg');
     margin-right: 18px;
+    &:hover {
+      background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/users.jpg");
+      cursor: pointer;
+    }
   }
   .addRecipes {
-    background-image: url('./images/addRecipes.jpg');
+    background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/addRecipes.jpg");
     margin-right: 18px;
+    &:hover {
+      background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/addRecipes.jpg");
+      cursor: pointer;
+    }
   }
   .getRecipes {
-    background-image: url('./images/getRecipe.jpeg');
+    background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/addRecipes.jpg");
+    &:hover {
+      background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/addRecipes.jpg");
+      cursor: pointer;
+    }
   }
 }
 

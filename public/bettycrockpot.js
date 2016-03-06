@@ -36,6 +36,9 @@ var page = {
       event.preventDefault();
       console.log("Sign up Clicked!");
       page.submitNewUser();
+      $('.profileContent').show();
+      $('.heroImg').hide();
+      $('.recipeForm').hide();
     });
 
     // $('form.signUp').on('submit', page.submitNewUser);
@@ -68,7 +71,7 @@ var page = {
       $('.profileContent').hide();
     });
     // HOME BUTTON LINK
-    $('.homeButton').on('click', function() {
+    $('.homeButton, .headerContainer h1').on('click', function() {
       $('.heroImg').show();
       $('.recipeForm').hide();
       $('.profileContent').hide();
