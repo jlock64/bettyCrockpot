@@ -4,6 +4,7 @@ $(document).ready(function(){
 
 var page = {
   userName: '',
+  userId: '',
   // url: 'http://api.bigoven.com/recipe/',
   // keyWord: 'recipes?title_kw=chicken',
   recipeId: '530115',
@@ -93,7 +94,7 @@ var page = {
   submitLogin: function(event){
     var user = page.getLoginFromDom();  // returns username, password object
     console.log("USER LOGGED IN", user);
-    page.findProfile(user);
+    // page.findProfile(user);
   },
 
   getLoginFromDom: function(event){
@@ -116,6 +117,7 @@ var page = {
       method: 'GET',
       data: user,
       success: function(response) {
+        console.log("response from find profile", response);
         page.loadProfileToDom(response);
       }
     })
@@ -131,7 +133,7 @@ var page = {
   //kicking off the new user feature
   submitNewUser: function(event){
     var newUser = page.getNewUserFromDom();
-    console.log("NEW USER", newUser);
+    console.log("NEW USER from submit new user function", newUser);
     page.addNewUserToDom(newUser);
   },
 
@@ -156,6 +158,7 @@ var page = {
       method: 'POST',
       data: newUser,
       success: function(response){
+        console.log("response from add new user to dom", response);
         var signature = _.template(templates.userCard);
         $('.userCard').html(signature(newUser));
       },
@@ -168,7 +171,7 @@ var page = {
   //kicking off the recipe add feature
   submitNewRecipe: function(event){
     var newRecipe = page.getNewRecipeFromDom();
-    console.log("new recipe info", newRecipe);
+    console.log("submit new recipe function", newRecipe);
     page.addRecipe(newRecipe);
   },
 
@@ -203,13 +206,19 @@ var page = {
       url: '/addRecipe',
       method: 'POST',
       data: newRecipe,
+      dataType: 'json',
       success: function(response){
         console.log("LOGGED THE RESPONSE TO ADD RECIPE", response);
         page.getRecipes();
       },
-      error: function(err){
-        console.log("error in addRecipe", err);
-      }
+      error: function (xhr, ajaxOptions, thrownError) {
+           console.log(xhr.status);
+           console.log(xhr.responseText);
+           console.log(thrownError);
+       }
+      // function(err){
+      //   console.log("error in addRecipe", err);
+      // }
     });
   },
 
