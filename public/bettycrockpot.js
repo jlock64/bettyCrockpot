@@ -129,7 +129,27 @@ var page = {
 
   loadProfileToDom: function(userProfile){
     //return looped, templated, recipes to append
+    $.ajax({
+       url: '/getRecipesFromUser',
+       method: 'GET',
+       success: function (recipes) {
+         console.log("GOT recipes", recipes);
+         var parsedRecipes = JSON.parse(recipes)
+         console.log("parsed json", parsedRecipes);
+         page.loopOverDataForRecipes(parsedRecipes);
+       },
+       error: function (err) {
+         console.log("ERROR in loadProfileToDom", err);
+       }
+     });
+  },
 
+  loopOverDataForRecipes: function (recipesArr){
+    _.each(recipesArr, function (el) {
+      console.log(el);
+      var signature = _.template(templates.recipeCardBig);
+      $('.articleWrapper').append(signature(el));
+    });
   },
 
 

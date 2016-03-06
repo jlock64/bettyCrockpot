@@ -23,7 +23,7 @@ var templates = {
       '<div class="cardRight">',
           '<h4>Directions: </h4>',
           '<div class="directions">',
-            '<p> <%= directions %> </p>',
+            '<p> <%= preparation %> </p>',
           '</div>',
       '</div>',
     '</article>'
