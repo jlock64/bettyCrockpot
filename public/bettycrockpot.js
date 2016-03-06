@@ -179,7 +179,7 @@ var page = {
     $('input[name="cookTime"]').val('');
     // console.log(title, description, ingredients, directions, prepTime, cookTime);
     return {
-      title: title,
+      recipeName: title,
       description: description,
       ingredients: ingredients,
       preparation: preparation,
