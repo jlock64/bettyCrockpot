@@ -25,6 +25,9 @@ var page = {
       event.preventDefault();
       console.log("Login Clicked!");
       page.submitLogin();
+      $('.profileContent').show();
+      $('.heroImg').hide();
+      $('.recipeForm').hide();
     });
 
 
@@ -36,6 +39,9 @@ var page = {
       event.preventDefault();
       console.log("Sign up Clicked!");
       page.submitNewUser();
+      $('.profileContent').show();
+      $('.heroImg').hide();
+      $('.recipeForm').hide();
     });
 
     // $('form.signUp').on('submit', page.submitNewUser);
@@ -45,6 +51,9 @@ var page = {
       event.preventDefault();
       console.log("New Recipe Clicked!");
       page.submitNewRecipe();
+      $('.profileContent').show();
+      $('.heroImg').hide();
+      $('.recipeForm').hide();
     });
 
     // $('form.newRecipe').on('submit', page.submitNewRecipe);
