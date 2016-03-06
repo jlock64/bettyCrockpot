@@ -110,9 +110,9 @@ div.navLinksWrapper {
       background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/addRecipes.jpg");
       cursor: pointer; }
   div.navLinksWrapper .getRecipes {
-    background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/addRecipes.jpg"); }
+    background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/getRecipe.jpeg"); }
     div.navLinksWrapper .getRecipes:hover {
-      background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/addRecipes.jpg");
+      background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/getRecipe.jpeg");
       cursor: pointer; }
 
 section.dashboard {
