@@ -139,6 +139,9 @@ public class Main {
         Connection conn = DriverManager.getConnection("jdbc:h2:./main");
         createTables(conn);
 
+        insertUser(conn, "BILLY JEAN", "PASSWORD!!!!");
+        insertRecipe(conn, 1, "SPAGHETTI!!!", "LOTS OF SPAGHETTI", "SPAGHTTI THINGS", "PREPARE THE SPAGHETTI", "PREP THAT SHIT!", "COOK IT! DO IT!");
+
         Spark.init();
         Spark.get(
                 "/getRecipes",
