@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/128-168.jpg");
+  background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("../images/128-168.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-size: 149%;
@@ -52,7 +52,7 @@ button[name="home"] {
   width: 50px; }
 
 .heroImg {
-  background-image: url("./images/mainPhoto.jpg");
+  background-image: url("../images/mainPhoto.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px; }
@@ -98,18 +98,19 @@ div.navLinksWrapper {
     cursor: pointer;
     opacity: .7; }
   div.navLinksWrapper .users {
-    background-image: url("./images/users.jpg");
+    background-image: url("../images/users.jpg");
     margin-right: 18px; }
   div.navLinksWrapper .addRecipes {
-    background-image: url("./images/addRecipes.jpg");
+    background-image: url("../images/addRecipes.jpg");
     margin-right: 18px; }
   div.navLinksWrapper .getRecipes {
-    background-image: url("./images/getRecipe.jpeg"); }
+    background-image: url("../images/getRecipe.jpeg"); }
 
 section.dashboard {
   text-align: center; }
 
 header {
+  position: relative;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -138,14 +139,25 @@ header {
   header .loginHeader {
     text-align: left; }
   header .signUpHeader {
-    text-align: right; }
+    text-align: right;
+    float: right;
+    top: 98px;
+    position: absolute;
+    right: 10px; }
+  header .signUpHeader:hover {
+    cursor: pointer;
+    transform: scale(1.05); }
   header .leftNav {
     display: inline-block;
     padding: 0px 0px 10px 10px; }
   header .rightNav {
-    display: inline-block;
+    display: none;
     padding: 0px 10px 10px 0px;
-    float: right; }
+    /* float: right; */
+    position: absolute;
+    top: 72px;
+    padding: 20px;
+    right: 0px; }
   header input[type="submit"] {
     line-height: 16px;
     font-size: 13px;
@@ -161,6 +173,16 @@ header {
     color: #d61431;
     font-weight: bold; }
   header input[type="text"] {
+    line-height: 20px;
+    font-size: 12px;
+    border: none;
+    border-radius: 26px;
+    text-align: left;
+    color: #d61431;
+    font-weight: bold;
+    margin-right: 5px;
+    padding-left: 10px; }
+  header input[type="password"] {
     line-height: 20px;
     font-size: 12px;
     border: none;
