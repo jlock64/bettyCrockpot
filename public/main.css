@@ -231,6 +231,9 @@ div.recipeForm {
 form.newRecipe {
   width: 70%;
   margin: 50px auto; }
+  form.newRecipe input[type="text"], form.newRecipe textarea {
+    border-radius: 5px;
+    border: 1px solid #ccc; }
   form.newRecipe input[type="submit"] {
     width: 100px;
     height: 35px;
