@@ -57,6 +57,17 @@ var page = {
       $('.recipeForm').hide();
     });
 
+    $('#logout').on('click', function(event){
+      event.preventDefault();
+      console.log("logout CLICKED", event);
+      page.logout();
+      $('.heroImg').show();
+      $('.recipeForm').hide();
+      $('.profileContent').hide();
+      $('.articleWrapper').html('');
+      $('.userCard').html('');
+    })
+
     // $('form.newRecipe').on('submit', page.submitNewRecipe);
 
     // USERS PAGE LINK
@@ -87,6 +98,20 @@ var page = {
     $('.signUpHeader').on('click', function() {
       $('.rightNav').toggle();
       $(this).hide();
+    });
+  },
+
+  logout: function(){
+    $.ajax({
+      url: '/logout',
+      method: 'POST',
+      success: function(response) {
+        console.log("response from logout", response);
+        // page.loadProfileToDom(response);
+      },
+      error: function(err){
+        console.log("error in LOGOUT", err);
+      }
     });
   },
 
@@ -146,8 +171,9 @@ var page = {
   },
 
   loopOverDataForRecipes: function (recipesArr){
+    $('.articleWrapper').html('');
     _.each(recipesArr, function (el) {
-      console.log(el);
+      console.log('this is the recipe loop',el);
       var signature = _.template(templates.recipeCardBig);
       $('.articleWrapper').append(signature(el));
     });
