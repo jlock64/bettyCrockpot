@@ -204,6 +204,7 @@ var page = {
       method: 'POST',
       data: newRecipe,
       success: function(response){
+        console.log("LOGGED THE RESPONSE TO ADD RECIPE", response);
         page.getRecipes();
       },
       error: function(err){
