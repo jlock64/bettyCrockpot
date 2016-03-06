@@ -14,7 +14,7 @@ button[name="home"] {
 }
 
 .heroImg {
-  background-image: url('../images/mainPhoto.jpg');
+  background-image: url('./images/mainPhoto.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   height: 400px;
@@ -69,15 +69,15 @@ div.navLinksWrapper {
   }
   .users {
     // background: linear-gradient(rgba(0, 0, 0, .2), rgba(0, 0, 0, .2));
-    background-image: url('../images/users.jpg');
+    background-image: url('./images/users.jpg');
     margin-right: 18px;
   }
   .addRecipes {
-    background-image: url('../images/addRecipes.jpg');
+    background-image: url('./images/addRecipes.jpg');
     margin-right: 18px;
   }
   .getRecipes {
-    background-image: url('../images/getRecipe.jpeg');
+    background-image: url('./images/getRecipe.jpeg');
   }
 }
 
