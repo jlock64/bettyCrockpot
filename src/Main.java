@@ -146,8 +146,8 @@ public class Main {
         Connection conn = DriverManager.getConnection("jdbc:h2:mem:bettyCrockpot-1");
         createTables(conn);
 
-        insertUser(conn, "DUDE", "D");
-        insertRecipe(conn, 1, "SPAGHETTI!!!", "LOTS OF SPAGHETTI", "SPAGHTTI THINGS", "PREPARE THE SPAGHETTI", "PREP THAT SHIT!", "COOK IT! DO IT!");
+        insertUser(conn, "Kevin", "Bozic");
+        insertRecipe(conn, 1, "Kevin's Potato Mountain", "Pillowy Mounds of Mashed Potatoes", "Potatoes, cheese, broccoli, meat(just whatever meat you want)", "prepare it", "time it took to prepare it", "~ 3 hours");
 
         Spark.init();
         Server.createWebServer().start();
@@ -181,11 +181,10 @@ public class Main {
                         return serializer.serialize(selectUser(conn, userName));
                     }
                     else if (user == null) {
-                        Spark.halt(400, "USER NAME MUST NOT BE NULL");
+                        Spark.halt(401, "USER NAME MUST NOT BE NULL");
                     }
                     else if (user.password != password) {
-                        Spark.halt(400, "PASSWORD DOES NOT MATCH");
-                        return "User Name and/or password not recognized.";
+                        Spark.halt(401, "PASSWORD DOES NOT MATCH");
                     }
                     return "";
                 })
@@ -260,7 +259,6 @@ public class Main {
         );
 
     }
-
     static User getUserFromSession(Session session, Connection conn) throws SQLException {
         String userName = session.attribute("userName");
         return selectUser(conn, userName);
