@@ -9,6 +9,14 @@
     <link rel="stylesheet" href="main.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
+    <div class="dialog">
+      <p id="alertText">Please sign in with a</br>username and password.</p>
+      <button class="alertButton" type="button" name="OK">OK</button>
+    </div>
+    <div class="dialogNewUser">
+      <p id="alertText">Please create a</br>username and password.</p>
+      <button class="alertButtonNewUser" type="button" name="OK">OK</button>
+    </div>
     <div class="mainContainer">
       <header>
           <div class="headerContainer">
@@ -20,8 +28,9 @@
                 <input name="password" type="password" placeholder="password">
                 <input name="loginButton" type="submit" value="Let's Go">
                 <!-- <input name="logOutButton" type="submit" value="Log Out"> -->
-                <button type="button" name="logOut" id="logout">Log Out</button>
+                <!-- <button type="button" name="logOut" id="logout">Log Out</button> -->
               </form>
+              <button type="button" name="logOut" id="logout">Log Out</button>
             </div>
             <h2 class="signUpHeader">Click Here to Sign Up</h2>
             <div class="rightNav">

@@ -25,10 +25,14 @@ var page = {
     $('form.login').on('submit', function(event){
       event.preventDefault();
       console.log("Login Clicked!");
-      page.submitLogin();
-      $('.profileContent').show();
-      $('.heroImg').hide();
-      $('.recipeForm').hide();
+      if ($('input[name="username"]').val() !=="" && $('input[name="password"]').val() !=="") {
+        page.submitLogin();
+        $('.profileContent').show();
+        $('.heroImg').hide();
+        $('.recipeForm').hide();
+      } else {
+        $('.dialog').show();
+      }
     });
 
 
@@ -39,10 +43,14 @@ var page = {
     $('form.signUp').on('submit', function(event){
       event.preventDefault();
       console.log("Sign up Clicked!");
+      if ($('input[name="newUsername"]').val() !=="" && $('input[name="newPassword"]').val() !=="") {
       page.submitNewUser();
       $('.profileContent').show();
       $('.heroImg').hide();
       $('.recipeForm').hide();
+    } else {
+      $('.dialogNewUser').show();
+    }
     });
 
     // $('form.signUp').on('submit', page.submitNewUser);
@@ -113,7 +121,7 @@ var page = {
       $('.profileContent').hide();
     });
     // HOME BUTTON LINK
-    $('.homeButton').on('click', function() {
+    $('.homeButton, .headerContainer h1').on('click', function() {
       $('.heroImg').show();
       $('.recipeForm').hide();
       $('.profileContent').hide();
@@ -122,6 +130,32 @@ var page = {
     $('.signUpHeader').on('click', function() {
       $('.rightNav').toggle();
       $(this).hide();
+    });
+    // WHEN LOGIN CLICKED HIDE LOGIN FORM AND SHOW LOGOUT BUTTON
+    $('input[name="loginButton"]').on('click', function() {
+      if ($('input[name="username"]').val() !=="" && $('input[name="password"]').val() !=="") {
+      $('#logout').siblings('form').css('opacity', '0.0');
+      $('#logout').show();
+      }
+    });
+    // WHEN LOGOUT BUTTON CLICKED HIDE BUTTON AND SHOW LOGIN FORM
+    $('#logout').on('click', function() {
+        $(this).siblings('form').css('opacity', '1' );
+        $(this).hide();
+    });
+    // CLICK CREATE BUTTON HIDE THOSE INPUT FIELDS
+    $('input[name="createButton"]').on('click', function(){
+      $('.signUpWrapper').hide();
+    });
+    // CLICK ALERT BUTTON TO HIDE ALERT BOX
+    $('.alertButton').on('click', function() {
+      $(this).parent('div').hide();
+    });
+    // CLICK ALERT BUTTON TO HIDE CREATE NEW USER ALERT BOX
+    $('.alertButtonNewUser').on('click', function() {
+      $('.signUpWrapper').show();
+      $(this).parent('div').hide();
+
     });
   },
 
