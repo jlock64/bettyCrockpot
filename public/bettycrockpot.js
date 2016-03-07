@@ -5,7 +5,7 @@ $(document).ready(function(){
 var page = {
   userName: '',
   userId: '',
-  // url: 'http://api.bigoven.com/recipe/',
+  url: 'http://api.bigoven.com/recipe/',
   // keyWord: 'recipes?title_kw=chicken',
   recipeId: '530115',
   apiKey: '?api_key=i4mh8L358389f4Tfsq82EWZUUlO9268k',
@@ -29,7 +29,7 @@ var page = {
         page.submitLogin();
         $('.profileContent').show();
         $('.heroImg').hide();
-        $('.recipeForm').hide();
+        $('.recipeForm, .signUpHeader').hide();
       } else {
         $('.dialog').show();
       }
@@ -48,6 +48,9 @@ var page = {
       $('.profileContent').show();
       $('.heroImg').hide();
       $('.recipeForm').hide();
+      $('#logout').siblings('form').css('opacity', '0.0');
+      $('#logout').show();
+      $('.signUpWrapper').hide();
     } else {
       $('.dialogNewUser').show();
     }
@@ -105,26 +108,21 @@ var page = {
     // USERS PAGE LINK
     $('div.navLinksWrapper .users').on('click', function() {
       $('.profileContent').show();
-      $('.heroImg').hide();
-      $('.recipeForm').hide();
+      $('.heroImg, .recipeForm').hide();
     });
     // ADD RECIPES LINK
     $('div.navLinksWrapper .addRecipes').on('click', function() {
       $('.recipeForm').show();
-      $('.heroImg').hide();
-      $('.profileContent').hide();
+      $('.heroImg, .profileContent').hide();
     });
     // GET RECIPES LINK
     $('div.navLinksWrapper .getRecipes').on('click', function() {
-      $('.recipeForm').hide();
-      $('.heroImg').hide();
-      $('.profileContent').hide();
+      $('.recipeForm, .heroImg, .profileContent').hide();
     });
     // HOME BUTTON LINK
     $('.homeButton, .headerContainer h1').on('click', function() {
       $('.heroImg').show();
-      $('.recipeForm').hide();
-      $('.profileContent').hide();
+      $('.recipeForm, .profileContent').hide();
     });
     // SIGN UP BUTTON REVEAL SIGNUP MENU AND BUTTON DISSAPEARS
     $('.signUpHeader').on('click', function() {
@@ -142,6 +140,7 @@ var page = {
     $('#logout').on('click', function() {
         $(this).siblings('form').css('opacity', '1' );
         $(this).hide();
+        $('.signUpHeader').show();
     });
     // CLICK CREATE BUTTON HIDE THOSE INPUT FIELDS
     $('input[name="createButton"]').on('click', function(){
