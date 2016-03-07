@@ -84,15 +84,21 @@ var page = {
       page.deleteRecipe(recipeId);
     });
 
-    $('.articleWrapper').on('click', '#edit', function(event){
-      event.preventDefault();
-      // console.log($(this).closest('article'));
-      var recipeId = $(this).closest('article').data('postid');
-      console.log("edit CLICKED");
-      page.editRecipe(recipeId);
-      var editedRecipe =
-      page.updateRecipe(editedRecipe);
-    });
+    // $('.articleWrapper').on('click', '#edit', function(event){
+    //   event.preventDefault();
+    //   console.log("edit CLICKED");
+    //   $(this).attr('contentEditable',true);
+    // });
+    //
+    // $('.articleWrapper').on('click', '#submitEdit', function(event){
+    //   event.preventDefault();
+    //   // console.log($(this).closest('article'));
+    //   $(this).attr('contentEditable',true);
+    //   var recipeId = $(this).closest('article').data('postid');
+    //   console.log("submitEdit CLICKED");
+    //   var editedRecipe = page.editRecipe(recipeId);
+    //   page.updateRecipe(editedRecipe);
+    // });
 
     // $('form.newRecipe').on('submit', page.submitNewRecipe);
 
@@ -169,12 +175,7 @@ var page = {
     });
   },
 
-  // $('span').bind('dblclick',
-  // function(){
-  //     $(this).attr('contentEditable',true);
-  // });
-
-  editRecipe: function(recipeId){
+  getEditedRecipe: function(recipeId){
     var title = $('input[name="title"]').val();
     $('input[name="title"]').val('');
     var description = $('textarea[name="description"]').val();
