@@ -118,6 +118,62 @@ div.navLinksWrapper {
 section.dashboard {
   text-align: center; }
 
+.dialog {
+  display: none;
+  width: 20%;
+  height: 150px;
+  margin: 0 auto;
+  background-color: #fff;
+  position: absolute;
+  top: 185px;
+  left: 172px;
+  border: 3px solid #9D0714; }
+  .dialog #alertText {
+    text-align: center;
+    margin-top: 34px; }
+  .dialog .alertButton {
+    width: 75px;
+    height: 25px;
+    background-color: #9D0714;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 1px 1px 10px #000;
+    margin-top: 10px;
+    margin-left: 80px; }
+  .dialog .alertButton:hover {
+    cursor: pointer;
+    transform: scale(1.1); }
+
+.dialogNewUser {
+  display: none;
+  width: 20%;
+  height: 150px;
+  margin: 0 auto;
+  background-color: #fff;
+  position: absolute;
+  top: 185px;
+  right: 172px;
+  border: 3px solid #9D0714; }
+  .dialogNewUser #alertText {
+    text-align: center;
+    margin-top: 34px; }
+  .dialogNewUser .alertButtonNewUser {
+    width: 75px;
+    height: 25px;
+    background-color: #9D0714;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 16px;
+    text-shadow: 1px 1px 10px #000;
+    margin-top: 10px;
+    margin-left: 80px; }
+  .dialogNewUser .alertButtonNewUser:hover {
+    cursor: pointer;
+    transform: scale(1.1); }
+
 header {
   position: relative;
   margin: 0;
@@ -221,13 +277,23 @@ header {
     color: rgba(214, 20, 49, 0.4);
     text-align: center; }
   header button {
-    cursor: pointer;
-    padding: 5px;
+    display: none;
     margin-left: 5px;
-    border-radius: 10px;
-    background-color: #fff;
+    line-height: 16px;
+    font-size: 13px;
     border: none;
-    color: #D61431;
+    border-radius: 26px;
+    color: rgba(214, 20, 49, 0.7);
+    font-weight: normal;
+    background-color: #fff;
+    transition: .1s all ease-in-out;
+    position: absolute;
+    top: 93px;
+    left: 10px; }
+  header button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    color: #d61431;
     font-weight: bold; }
 
 .homeButton {
