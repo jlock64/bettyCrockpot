@@ -80,6 +80,7 @@ div.navLinksWrapper {
   .addRecipes {
     background-image: linear-gradient(rgba(50, 50, 50, 0), rgba(50, 50, 50, 0)), url("./images/addRecipes.jpg");
     margin-right: 18px;
+    transition: .4s all ease-in-out;
     &:hover {
       background-image: linear-gradient(rgba(50, 50, 50, 0.3), rgba(50, 50, 50, 0.3)), url("./images/addRecipes.jpg");
       cursor: pointer;
